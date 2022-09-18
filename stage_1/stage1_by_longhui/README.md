@@ -1,13 +1,14 @@
-#1. Configure the environment   
+## 1. Configure the environment   
 conda create --name cell-tracking-challenge --file requirements-conda.txt   
 conda activate cell-tracking-challenge     
-# install other requirements   
+
+## 2. Install other requirements      
 pip install -r requirements.txt   
 
-#2. Download datasets   
+## 2. Download datasets   
 http://celltrackingchallenge.net/2d-datasets/   
 
-#3. Put the download data to data directory look like:    
+## 3. Put the download data to data directory look like:    
 
 ├── data                    <- Project data   
 │   │   │   │   ├── 01                                    <- Seuqence 01   
@@ -35,7 +36,7 @@ http://celltrackingchallenge.net/2d-datasets/
 │   │   │   .   
 │   │   │   .   
 
-#3. Use the api to create csv   
+## 4. Use the api to create csv   
 
 import api_stage1
     #way1:use the default path (path message stored in stage1.py)   
@@ -45,4 +46,4 @@ import api_stage1
                input_model, output_csv, basic,   
                sequences, seg_dir).create_csv_with_default()   
 
-#4. The output csv stored in data/basic_features   
+## 5. The output csv stored in data/basic_features   
