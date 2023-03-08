@@ -1,4 +1,4 @@
-git+https://github.com/watarungurunnn/devolearn
+git+https://github.com/sushmanthreddy/devolearn.git
 torch==1.7.0
 dgl
 jupyter
