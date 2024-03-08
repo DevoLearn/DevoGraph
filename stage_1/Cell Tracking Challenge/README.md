@@ -11,27 +11,27 @@ http://celltrackingchallenge.net/2d-datasets/
 ## 3. Put the download data to data directory look like:    
 
 ├── data                    <- Project data   
-│   │   │   │   ├── 01                                    <- Seuqence 01   
-│   │   │   │   ├── 01_GT                                 <- Seuqence 01 GT   
+│   │   │   │   ├── 01                                    <- Sequence 01   
+│   │   │   │   ├── 01_GT                                 <- Sequence 01 GT   
 │   │   │   │   │   ├── TRA                                   <- Tracking GT   
-│   │   │   │   ├── 02                                    <- Seuqence 02   
-│   │   │   │   ├── 02_GT                                 <- Seuqence 02 GT   
-│   │   │   │   ├── 01                                    <- Seuqence 01   
-│   │   │   │   ├── 01_GT                                 <- Seuqence 01 GT   
+│   │   │   │   ├── 02                                    <- Sequence 02   
+│   │   │   │   ├── 02_GT                                 <- Sequence 02 GT   
+│   │   │   │   ├── 01                                    <- Sequence 01   
+│   │   │   │   ├── 01_GT                                 <- Sequence 01 GT   
 │   │   │   │   │   ├── TRA                                   <- Tracking GT   
 │   │   │   │   │   └── SEG                                   <- Tracking SEG (Not used)   
-│   │   │   │   ├── 01_ST                                 <- Seuqence 01 Silver GT   
+│   │   │   │   ├── 01_ST                                 <- Sequence 01 Silver GT   
 │   │   │   │   └── └── SEG                                   <- Tracking SEG   
 │   │   │   .   
 │   │   │   .   
 │   │   │   .   
 │   │   ├── Test                             <- Graph Dataset implementation   
 │   │   │   ├── Fluo-N2DH-SIM+                        <- Fluo-N2DH-SIM+ Dataset   
-│   │   │   │   ├── 01                                    <- Seuqence 01   
-│   │   │   │   ├── 02                                    <- Seuqence 02   
+│   │   │   │   ├── 01                                    <- Sequence 01   
+│   │   │   │   ├── 02                                    <- Sequence 02   
 │   │   │   ├── PhC-C2DH-U373                             <- PhC-C2DH-U373 Dataset   
-│   │   │   │   ├── 01                                    <- Seuqence 01   
-│   │   │   │   ├── 02                                    <- Seuqence 02   
+│   │   │   │   ├── 01                                    <- Sequence 01   
+│   │   │   │   ├── 02                                    <- Sequence 02   
 │   │   │   .   
 │   │   │   .   
 │   │   │   .   
