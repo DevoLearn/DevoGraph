@@ -3,9 +3,9 @@
 * DevoGraph is a [GSoC 2022 project](https://neurostars.org/t/gsoc-2022-project-idea-gnns-as-developmental-networks/21368) under the administration of [INCF](https://www.incf.org/) and [DevoWorm](https://devoworm.weebly.com/). Our main goal is to provide examples and components that utlize (Temporal/Directed/...) Graph Neural Networks to model the developmental process of *[C. elegans](https://en.wikipedia.org/wiki/Caenorhabditis_elegans)*. 
 
 ## Developers
-* GSoC 2022 participants: [Jiahang Li](https://github.com/LspongebobJH), [Wataru Kawakami](https://github.com/watarungurunnn)
+* GSoC contributors: [Jiahang Li](https://github.com/LspongebobJH/DevoGraph), [Wataru Kawakami](https://github.com/watarungurunnn/GSoC2022_submission/tree/main), [Himansuhu Chougule](https://github.com/himanshu-02/DevoGraph)
 * Mentors: [Bradly Alicea](https://bradly-alicea.weebly.com/), [Jesse Parent](https://jesparent.github.io/)
-* External contributors: [Longhui Jiang](https://github.com/jianglonghui)
+* External contributors: [Longhui Jiang](https://github.com/jianglonghui/DevoGraph), [Sushmanth Reddy](https://github.com/sushmanthreddy/DevoGraph) 
 
 ## Contributions
 ### Jiahang Li
@@ -17,8 +17,13 @@
 * Assign tasks to other participants.
 
 ### Wataru Kawakami
-* Please refer to [Wataru Kawakami](https://github.com/watarungurunnn/GSoC2022_submission) to check his contributions.
+* worked on image processing issues (Stage 1).
 
 ### Longhui Jiang
-* Refactor codes of pre-processing 2-D images(frames of videos) and converting them into location information of cells stored in csv files. The re-implementation is based on [cell-track-gnn](https://github.com/talbenha/cell-tracker-gnn). Please refer to `./stage_1/` and `./stage_1/stage1_by_longhui` for more details.
-* Note that in `./stage_1/`, `./stage_1/stage1_by_longhui` is implemented by Longhui and other files are implemented by Wataru.
+* Refactor codes of pre-processing 2-D images(frames of videos) and converting them into location information of cells stored in .csv files (Stage 1). The re-implementation is based on [cell-track-gnn](https://github.com/talbenha/cell-tracker-gnn). 
+
+### Sushmanth Reddy
+* incorporating DevoLearn models into DevoGraph, particularly for Stage 1.
+
+### Himanshu Chougule
+* developed a customized RNN for creating graph embeddings, building out Topological Data Analysis tools and infrastructure.
