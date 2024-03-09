@@ -56,6 +56,10 @@ Future plan:
 - scikit-image - Fixed a function of "regionprops" of scikit-image, which requires non-negative input, to consider negative value input very close to 0 to be 0. [Folk](https://github.com/scikit-image/scikit-image/commit/dede59c19817bceccf80de8eb59eb29db746e1c5)
   - The negative values appeared to be computational error.
   - This change was needed to run the cell-tracking-gnn on 3D datasets.
+  - 
+### 5. All Parameters file
+
+[link to GSoC 2022 repository](https://github.com/watarungurunnn/GSoC2022_submission/blob/main/all_params.pth)
 
 ### What has not been done
 - Merge whole refactored codes of Ben-Haim, T. & Riklin-Raviv, T. Graph Neural Network for Cell Tracking in Microscopy Videos. Preprint at http://arxiv.org/abs/2202.04731 (2022). to provide complete API.
