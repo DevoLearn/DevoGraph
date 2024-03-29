@@ -5,7 +5,7 @@
 ## Developers
 * GSoC contributors: [Jiahang Li](https://github.com/LspongebobJH/DevoGraph), [Wataru Kawakami](https://github.com/watarungurunnn/GSoC2022_submission/tree/main), [Himansuhu Chougule](https://github.com/himanshu-02/DevoGraph)
 * Mentors: [Bradly Alicea](https://bradly-alicea.weebly.com/), [Jesse Parent](https://jesparent.github.io/)
-* External contributors: [Longhui Jiang](https://github.com/jianglonghui/DevoGraph), [Sushmanth Reddy](https://github.com/sushmanthreddy/DevoGraph) 
+* Additional contributors: [Longhui Jiang](https://github.com/jianglonghui/DevoGraph), [Sushmanth Reddy](https://github.com/sushmanthreddy/DevoGraph), [Gautham Krishnan](https://github.com/gauthamk02)
 
 ## Contributions
 ### Jiahang Li
