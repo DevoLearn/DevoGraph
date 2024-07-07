@@ -42,7 +42,7 @@ Follow these steps to run the analysis:
 
 The dataset used in this project contains information about the connectivity of cells in C. elegans. The data is provided in an Excel file with multiple sheets, each detailing different aspects of cell connectivity and lineage, out of which *daughter-of-database* sheet has been used.
 
-### Sheet overview:
+#### Sheet overview:
 - **daughter-of-database**: Contains information about the lineage and connections between cells.
 
     | CELL NAME | LOCATION | OBJECT     | RELATION    | CELL NAME | LOCATION | 
