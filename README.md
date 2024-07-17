@@ -27,3 +27,9 @@
 
 ### Himanshu Chougule
 * developed a customized RNN for creating graph embeddings, building out Topological Data Analysis tools and infrastructure.
+  
+### Mehul Arora
+* developed a Hypergraph model of the embryo.
+
+### Pakhi Banchalia
+* developed applications of k-mapper for Topological Data Analysis and Neural Developmental Programs.
