@@ -1,0 +1,1088 @@
+Parent,Daughter 1,Daughter 2,Birth Time
+P0,AB,P1,0.0
+AB,ABa,ABp,17.0
+P1,EMS,P2,18.0
+ABa,ABar,ABal,35.0
+ABp,ABpr,ABpl,35.0
+EMS,MS,E,39.0
+P2,C,P3,42.0
+ABpl,ABplp,ABpla,50.0
+ABar,ABara,ABarp,50.0
+ABal,ABala,ABalp,50.0
+ABpr,ABprp,ABpra,55.0
+MS,MSp,MSa,58.0
+E,Ep,Ea,58.0
+ABplp,ABplpp,ABplpa,67.0
+ABala,ABalaa,ABalap,68.0
+ABalp,ABalpp,ABalpa,68.0
+P3,D,P4,68.0
+ABarp,ABarpp,ABarpa,68.0
+C,Cp,Ca,70.0
+ABara,ABarap,ABaraa,75.0
+ABprp,ABprpa,ABprpp,75.0
+ABpra,ABpraa,ABprap,75.0
+ABpla,ABplap,ABplaa,75.0
+MSp,MSpa,MSpp,85.0
+MSa,MSap,MSaa,85.0
+ABalap,ABalapa,ABalapp,92.0
+ABalaa,ABalaaa,ABalaap,94.0
+Ca,Cap,Caa,97.0
+Cp,Cpa,Cpp,97.0
+ABalpp,ABalppa,ABalppp,105.0
+ABprpa,ABprpaa,ABprpap,105.0
+ABplap,ABplapa,ABplapp,105.0
+ABpraa,ABpraaa,ABpraap,105.0
+ABarpa,ABarpaa,ABarpap,105.0
+ABarap,ABarapa,ABarapp,105.0
+ABaraa,ABaraap,ABaraaa,105.0
+ABarpp,ABarppp,ABarppa,105.0
+ABprpp,ABprppa,ABprppp,105.0
+ABprap,ABprapp,ABprapa,105.0
+ABplaa,ABplaap,ABplaaa,105.0
+ABplpp,ABplppp,ABplppa,105.0
+ABplpa,ABplpaa,ABplpap,105.0
+ABalpa,ABalpaa,ABalpap,105.0
+Ea,Eal,Ear,110.0
+D,Dp,Da,115.0
+MSaa,MSaaa,MSaap,115.0
+Ep,Epr,Epl,115.0
+ABalapa,ABalapaa,ABalapap,120.0
+MSap,MSapa,MSapp,120.0
+MSpa,MSpap,MSpaa,120.0
+ABalapp,ABalappp,ABalappa,121.0
+MSpp,MSppa,MSppp,122.0
+ABalaaa,ABalaaaa,ABalaaap,122.0
+ABalaap,ABalaapa,ABalaapp,123.0
+Cap,Capa,Capp,133.0
+Caa,Caap,Caaa,133.0
+Cpa,Cpap,Cpaa,133.0
+Cpp,Cppa,Cppp,133.0
+ABprpaa,ABprpaaa,ABprpaap,135.0
+ABarppp,ABarpppp,ABarpppa,135.0
+ABplapa,ABplapaa,ABplapap,135.0
+ABprapa,ABprapaa,ABprapap,135.0
+ABprpap,ABprpapa,ABprpapp,135.0
+ABplaaa,ABplaaaa,ABplaaap,135.0
+ABalppp,ABalpppp,ABalpppa,135.0
+ABalpap,ABalpapp,ABalpapa,135.0
+ABalpaa,ABalpaap,ABalpaaa,135.0
+ABplpaa,ABplpaaa,ABplpaap,135.0
+ABplpap,ABplpapa,ABplpapp,135.0
+ABplapp,ABplappa,ABplappp,135.0
+ABpraaa,ABpraaap,ABpraaaa,135.0
+ABpraap,ABpraapa,ABpraapp,135.0
+ABprapp,ABprappa,ABprappp,135.0
+ABarpaa,ABarpaap,ABarpaaa,135.0
+ABarpap,ABarpapp,ABarpapa,135.0
+ABarapa,ABarapaa,ABarapap,135.0
+ABaraaa,ABaraaaa,ABaraaap,135.0
+ABaraap,ABaraapa,ABaraapp,135.0
+ABarapp,ABarappp,ABarappa,135.0
+ABarppa,ABarppap,ABarppaa,135.0
+ABplaap,ABplaapp,ABplaapa,135.0
+ABprppa,ABprppaa,ABprppap,140.0
+ABplppp,ABplpppa,ABplpppp,140.0
+ABplppa,ABplppaa,ABplppap,140.0
+ABprppp,ABprpppp,ABprpppa,140.0
+P4,Z2,Z3,140.0
+ABalppa,ABalppap,ABalppaa,140.0
+MSaaa,MSaaap,MSaaaa,145.0
+MSaap,MSaapa,MSaapp,145.0
+ABalpppp,ABalppppa,ABalppppp,148.0
+MSapa,MSapap,MSapaa,150.0
+MSpaa,MSpaaa,MSpaap,150.0
+MSpap,MSpapp,MSpapa,150.0
+MSapp,MSappa,MSappp,150.0
+ABalppap,ABalppapp,ABalppapa,153.0
+MSppa,MSppap,MSppaa,155.0
+MSppp,MSpppp,MSpppa,155.0
+ABalapap,ABalapapp,ABalapapa,160.0
+ABalappp,ABalapppa,ABalapppp,160.0
+ABalppaa,ABalppaap,ABalppaaa,163.0
+ABpraaap,ABpraaapp,ABpraaapa,165.0
+ABalpaap,ABalpaapp,ABalpaapa,165.0
+ABalpapa,ABalpapaa,ABalpapap,165.0
+ABalpapp,ABalpappa,ABalpappp,165.0
+ABprpapa,ABprpapaa,ABprpapap,165.0
+Eal,Eala,Ealp,165.0
+ABprpapp,ABprpappa,ABprpappp,165.0
+Dp,Dpp,Dpa,165.0
+ABalpppa,ABalpppap,ABalpppaa,165.0
+Ear,Eara,Earp,165.0
+Da,Daa,Dap,165.0
+Caaa,Caaap,Caaaa,165.0
+ABalapaa,ABalapaaa,ABalapaap,170.0
+ABalaaap,ABalaaapp,ABalaaapa,170.0
+Cpaa,Cpaap,Cpaaa,170.0
+ABalaapp,ABalaappa,ABalaappp,170.0
+ABprpppa,ABprpppaa,ABprpppap,170.0
+ABprpppp,ABprppppa,ABprppppp,170.0
+ABplaaaa,ABplaaaaa,ABplaaaap,170.0
+ABarpaap,ABarpaapp,ABarpaapa,170.0
+Epl,Eplp,Epla,170.0
+Epr,Epra,Eprp,170.0
+ABplaaap,ABplaaapa,ABplaaapp,170.0
+ABprappa,ABprappap,ABprappaa,170.0
+ABplaapa,ABplaapaa,ABplaapap,170.0
+ABplappa,ABplappaa,ABplappap,170.0
+ABplaapp,ABplaappa,ABplaappp,170.0
+ABplapap,ABplapapa,ABplapapp,170.0
+ABprapap,ABprapapp,ABprapapa,170.0
+ABpraapp,ABpraappa,ABpraappp,170.0
+ABplpapa,ABplpapap,ABplpapaa,170.0
+ABalappa,ABalappaa,ABalappap,170.0
+ABplpppa,ABplpppaa,ABplpppap,170.0
+ABplpapp,ABplpappp,ABplpappa,170.0
+ABplpppp,ABplppppp,ABplppppa,170.0
+ABpraaaa,ABpraaaap,ABpraaaaa,170.0
+ABpraapa,ABpraapaa,ABpraapap,170.0
+ABprppaa,ABprppaaa,ABprppaap,175.0
+ABprppap,ABprppapp,ABprppapa,175.0
+ABarappa,ABarappaa,ABarappap,175.0
+ABaraapp,ABaraappp,ABaraappa,175.0
+ABaraapa,ABaraapaa,ABaraapap,175.0
+ABalaapa,ABalaapaa,ABalaapap,175.0
+ABplppaa,ABplppaap,ABplppaaa,175.0
+ABplappp,ABplapppp,ABplapppa,175.0
+ABplpaap,ABplpaapa,ABplpaapp,175.0
+ABarappp,ABarapppa,ABarapppp,175.0
+ABarapap,ABarapapp,ABarapapa,175.0
+ABaraaap,ABaraaapa,ABaraaapp,175.0
+ABarpapa,ABarpapap,ABarpapaa,175.0
+ABarpapp,ABarpappa,ABarpappp,175.0
+ABprappp,ABprapppp,ABprapppa,175.0
+ABprpaap,ABprpaapa,ABprpaapp,175.0
+Cpap,Cpapp,Cpapa,175.0
+ABalaaaa,ABalaaaar,ABalaaaal,175.0
+ABplppap,ABplppapa,ABplppapp,175.0
+ABalpaaa,ABalpaaaa,ABalpaaap,175.0
+ABprapaa,ABprapaap,ABprapaaa,175.0
+ABplapaa,ABplapaaa,ABplapaap,175.0
+MSaapa,MSaapaa,MSaapap,180.0
+ABarpppp,ABarppppp,ABarppppa,180.0
+ABarpaaa,ABarpaaap,ABarpaaaa,180.0
+ABarppap,ABarppapp,ABarppapa,180.0
+ABplpaaa,ABplpaaap,ABplpaaaa,180.0
+ABprpaaa,ABprpaaap,ABprpaaaa,180.0
+ABaraaaa,ABaraaaap,ABaraaaaa,180.0
+ABarapaa,ABarapaaa,ABarapaap,180.0
+Caap,Caapp,Caapa,180.0
+MSaaaa,MSaaaap,MSaaaaa,180.0
+MSpaaa,MSpaaaa,MSpaaap,185.0
+Cppa,Cppap,Cppaa,185.0
+MSpapa,MSpapap,MSpapaa,185.0
+Capp,Cappa,Cappp,185.0
+Capa,Capaa,Capap,185.0
+Cppp,Cpppa,Cpppp,185.0
+ABarppaa,ABarppaap,ABarppaaa,187.0
+ABarpppa,ABarpppaa,ABarpppap,187.0
+MSaaap,MSaaapa,MSaaapp,188.0
+MSapap,MSapapa,MSapapp,188.0
+MSapaa,MSapaaa,MSapaap,188.0
+MSpaap,MSpaapp,MSpaapa,190.0
+MSppap,MSppapa,MSppapp,190.0
+MSppaa,MSppaaa,MSppaap,190.0
+MSappp,MSapppa,MSapppp,194.0
+MSaapp,MSaappa,MSaappp,194.0
+MSappa,MSappaa,MSappap,194.0
+MSpppa,MSpppap,MSpppaa,195.0
+MSpppp,MSppppa,MSppppp,195.0
+MSpapp,MSpappp,MSpappa,195.0
+Dap,Dapa,Dapp,200.0
+Dpp,Dppp,Dppa,200.0
+ABalapppp,ABalappppp,ABalappppa,210.0
+ABarapapp,ABarapappp,ABarapappa,210.0
+ABalapapp,ABalapappp,ABalapappa,210.0
+Dpa,Dpap,Dpaa,210.0
+Daa,Daap,Daaa,210.0
+ABplpappa,ABplpappap,ABplpappaa,210.0
+ABalapppa,ABalapppaa,ABalapppap,213.0
+ABplapapp,ABplapappp,P11,215.0
+ABplappap,V3L,P7,215.0
+ABplappaa,P5,P3,215.0
+ABalapaaa,ABalapaaaa,ABalapaaap,215.0
+ABplpaapp,ABplpaappa,ABplpaappp,215.0
+ABplpapap,ABplpapapa,ABplpapapp,215.0
+ABalappap,ABalappapp,ABalappapa,215.0
+ABplapapa,ABplapapaa,P9,215.0
+ABplaappp,hyp7,hyp7,215.0
+ABalpappp,ABalpapppa,ABalpapppp,215.0
+ABalapaap,ABalapaapp,ABalapaapa,215.0
+ABarapapa,ABarapapap,ABarapapaa,215.0
+ABarpaapp,hyp7,hyp7,215.0
+ABalapapa,ABalapapaa,ABalapapap,215.0
+ABalppapp,ABalppappa,ABalppappp,217.0
+ABalppppp,ABalpppppa,ABalpppppp,217.0
+ABplpapaa,ABplpapaap,ABplpapaaa,217.0
+ABalpappa,ABalpappap,ABalpappaa,217.0
+ABarapppp,ABarappppp,ABarappppa,218.0
+ABarapppa,ABarapppap,ABarapppaa,220.0
+ABalppapa,ABalppapap,ABalppapaa,220.0
+ABprpappa,ABprpappap,ABprpappaa,220.0
+ABplapaaa,ABplapaaaa,ABplapaaap,220.0
+ABalaappp,ABalaapppp,ABalaapppa,220.0
+ABplppppa,ABplppppaa,ABplppppap,220.0
+ABpraaapp,ABpraaappa,ABpraaappp,220.0
+ABplpappp,ABplpapppp,ABplpapppa,220.0
+ABplppppp,ABplpppppp,ABplpppppa,220.0
+ABprpaapp,ABprpaappp,ABprpaappa,220.0
+Caaaa,hyp7,hyp7,220.0
+ABarappap,ABarappapp,ABarappapa,220.0
+Cpaap,hyp7,hyp7,220.0
+ABprpapap,ABprpapapa,ABprpapapp,220.0
+Cpaaa,hyp7,hyp7,222.0
+Caaap,hyp7,hyp7,222.0
+ABprapapa,P10,ABprapapaa,223.0
+ABprapapp,P12,ABprapappp,223.0
+ABprappap,P8,V3R,223.0
+ABpraappp,hyp7,hyp7,223.0
+ABalppppa,ABalppppaa,ABalppppap,223.0
+ABprappaa,P6,P4,223.0
+ABplaaapp,H1L,H0L,225.0
+ABplpppaa,ABplpppaaa,ABplpppaap,225.0
+ABplpaaap,ABplpaaapp,ABplpaaapa,225.0
+ABprpaaap,ABprpaaapp,ABprpaaapa,225.0
+ABprpaaaa,ABprpaaaap,ABprpaaaaa,225.0
+ABalpppap,ABalpppapa,ABalpppapp,225.0
+ABprpaapa,ABprpaapaa,ABprpaapap,225.0
+ABprpapaa,ABprpapaap,ABprpapaaa,225.0
+ABarpappp,H1R,H0R,225.0
+ABprppppp,ABprpppppa,ABprpppppp,225.0
+ABalpaapa,ABalpaapaa,ABalpaapap,225.0
+ABprapaaa,ABprapaaaa,ABprapaaap,225.0
+ABplapaap,G2,P1,225.0
+ABaraaapa,ABaraaapap,ABaraaapaa,225.0
+ABalaaapa,ABalaaapar,ABalaaapal,225.0
+ABalaaapp,ABalaaappr,ABalaaappl,225.0
+ABprppppa,ABprppppaa,ABprppppap,225.0
+ABarpaapa,hyp7,hyp6,225.0
+ABprpappp,ABprpapppp,ABprpapppa,225.0
+ABalpapap,ABalpapapp,ABalpapapa,225.0
+ABplpaaaa,ABplpaaaap,ABplpaaaaa,225.0
+ABplpppap,ABplpppapa,ABplpppapp,225.0
+ABprapaap,W,P2,225.0
+ABpraaapa,ABpraaapaa,ABpraaapap,226.0
+ABplpaapa,ABplpaapap,ABplpaapaa,227.0
+ABpraaaap,ABpraaaapp,ABpraaaapa,227.0
+ABaraapaa,ABaraapaaa,ABaraapaap,228.0
+ABaraapap,ABaraapapa,ABaraapapp,228.0
+ABaraappa,ABaraappap,ABaraappaa,228.0
+ABprpppaa,ABprpppaap,ABprpppaaa,228.0
+ABalpapaa,ABalpapaap,ABalpapaaa,228.0
+MSaaaaa,MSaaaaap,MSaaaaaa,228.0
+ABarappaa,ABarappaaa,ABarappaap,228.0
+ABaraappp,ABaraapppa,ABaraapppp,228.0
+ABprpppap,ABprpppapa,ABprpppapp,228.0
+ABarapaap,ABarapaapp,ABarapaapa,228.0
+ABplppapa,ABplppapap,ABplppapaa,230.0
+ABprppapp,ABprppappa,ABprppappp,230.0
+ABplppapp,ABplppappp,ABplppappa,230.0
+ABplppaaa,ABplppaaap,ABplppaaaa,230.0
+ABpraapaa,ABpraapaaa,ABpraapaap,230.0
+ABplaapaa,ABplaapaap,ABplaapaaa,230.0
+ABplaapap,ABplaapapp,ABplaapapa,230.0
+ABplaappa,hyp6,hyp4,230.0
+Earp,int2D,int5R,230.0
+MSpaaaa,MSpaaaaa,MSpaaaap,230.0
+ABarppaap,hyp7,ABarppaapp,230.0
+ABprapppa,ABprapppap,ABprapppaa,230.0
+ABarppapp,V6L,V4L,230.0
+ABarppapa,V1L,V2L,230.0
+ABarpapap,hyp4,hyp6,230.0
+Ealp,int5L,int2V,230.0
+Eara,Earaa,int3D,230.0
+Eala,int3V,Ealaa,230.0
+ABplaaaap,hyp6,hyp6,230.0
+ABarppppp,V6R,V4R,230.0
+ABarpppap,hyp7,ABarpppapp,230.0
+ABprppaaa,ABprppaaaa,ABprppaaap,230.0
+ABaraaapp,ABaraaappa,ABaraaappp,230.0
+Cpapa,hyp7,hyp7,230.0
+ABarapaaa,ABarapaaaa,ABarapaaap,230.0
+ABprppapa,ABprppapap,ABprppapaa,230.0
+ABprapppp,TR,hyp7,230.0
+ABalppaap,ABalppaapa,ABalppaapp,230.0
+ABarppppa,V1R,V2R,230.0
+ABpraappa,hyp6,hyp4,230.0
+ABpraapap,ABpraapapa,ABpraapapp,230.0
+ABplapppp,TL,hyp7,230.0
+ABplapppa,ABplapppap,ABplapppaa,230.0
+ABalpaapp,ABalpaappp,ABalpaappa,230.0
+ABarppaaa,ADEshL,H2L,235.0
+ABarpppaa,ADEshR,H2R,235.0
+Epla,int6L,int4V,235.0
+ABarpapaa,ABarpapaaa,ABarpapaap,235.0
+ABprppaap,ABprppaapa,ABprppaapp,235.0
+Caapp,hyp7,PVR,235.0
+Cpapp,hyp7,hyp11,235.0
+ABplppaap,ABplppaapp,ABplppaapa,235.0
+MSpapaa,MSpapaap,MSpapaaa,235.0
+ABplaaaaa,ABplaaaaaa,ABplaaaaap,235.0
+Epra,int6R,int4D,235.0
+MSpaaap,MSpaaapa,MSpaaapp,235.0
+MSaaaap,MSaaaapp,MSaaaapa,235.0
+MSaapaa,MSaapaaa,MSaapaap,235.0
+ABalpppaa,ABalpppaap,ABalpppaaa,237.0
+ABalppaaa,ABalppaaap,ABalppaaaa,237.0
+ABalpaaaa,ABalpaaaap,ABalpaaaaa,237.0
+ABalpaaap,ABalpaaapa,ABalpaaapp,237.0
+MSaaapa,MSaaapaa,MSaaapap,240.0
+MSaapap,MSaapapa,MSaapapp,240.0
+MSapaaa,MSapaaaa,mu bod,240.0
+ABpraaaaa,ABpraaaaap,ABpraaaaaa,240.0
+ABalappaa,ABalappaaa,ABalappaap,240.0
+ABaraaaaa,ABaraaaaap,ABaraaaaaa,240.0
+Cpppp,Cppppp,Cppppa,240.0
+MSpapap,MSpapapa,MSpapapp,240.0
+Cappa,Cappaa,Cappap,240.0
+Cappp,Capppa,Capppp,240.0
+ABarpappa,hyp5,XXXR,240.0
+ABalaapap,ABalaapapp,ABalaapapa,240.0
+Cpppa,Cpppaa,Cpppap,240.0
+ABplaaapa,XXXL,hyp5,240.0
+MSppapa,mu bod,MSppapaa,240.0
+MSppaaa,mu bod,MSppaaaa,240.0
+ABalaapaa,ABalaapaap,ABalaapaaa,240.0
+ABarpaaaa,ABarpaaaap,ABarpaaaaa,240.0
+ABarpaaap,ABarpaaapa,ABarpaaapp,240.0
+MSapapa,mu bod,MSapapaa,240.0
+ABalaappa,ABalaappaa,ABalaappap,240.0
+Eprp,Eprpp,int7R,245.0
+Eplp,Eplpp,int7L,245.0
+MSpaapa,MSpaapaa,MSpaapap,245.0
+Cppaa,Cppaaa,Cppaap,250.0
+Capaa,Capaap,Capaaa,250.0
+Cppap,Cppapa,Cppapp,250.0
+ABalaaaar,ABalaaaarr,ABalaaaarl,250.0
+MSapapp,mu bod,mu bod,250.0
+MSppapp,mu bod,mu bod,250.0
+ABalaaaal,ABalaaaala,ABalaaaalp,250.0
+Capap,Capapp,Capapa,250.0
+ABaraaaap,ABaraaaapa,ABaraaaapp,250.0
+ABalpppppp,ABalppppppp,ABalppppppa,255.0
+ABalpapppp,mc1V,m3VL,258.0
+MSppppa,mu bod,mu bod,260.0
+MSapppa,mu bod,mu bod,260.0
+MSapppp,mu bod,mu bod,260.0
+MSapaap,M,MSapaapa,260.0
+MSppppp,mu bod,mu bod,260.0
+MSppaap,mu int R,MSppaapa,260.0
+ABpraaappp,ABpraaapppa,ABpraaapppp,260.0
+Dapp,Dappp,Dappa,265.0
+Dppp,Dpppp,Dpppa,265.0
+MSpppaa,MSpppaaa,Z1,265.0
+MSappaa,Z4,hmc,265.0
+ABarapappp,m3VR,mc2V,265.0
+ABplpappaa,exc cell,RMEV,265.0
+MSaappp,MSaapppa,MSaapppp,270.0
+int5L,int5Lp,int5La,270.0
+int3V,int3Vp,int3Va,270.0
+MSpppap,mu bod,MSpppapa,270.0
+MSpappp,MSpapppa,MSpapppp,270.0
+MSappap,MSappapa,mu bod,270.0
+ABalpappap,mc3V,e2V,270.0
+MSpappa,mu bod,mu bod,270.0
+int3D,int3Dp,int3Da,270.0
+Dapa,mu bod,mu bod,270.0
+Dppa,mu bod,mu bod,270.0
+int5R,int5Ra,int5Rp,270.0
+int6R,int6Ra,int6Rp,275.0
+int6L,int6Lp,int6La,275.0
+Dpaa,mu bod,mu bod,275.0
+int4V,int4Vp,int4Va,275.0
+MSaapaap,MSaapaapa,m7VL,275.0
+int4D,int4Da,int4Dp,275.0
+ABplpppapa,hyp8,PHshL,275.0
+MSpapaap,MSpapaapa,m7VR,275.0
+Daaa,mu bod,mu bod,275.0
+ABprpppapa,hyp9,PHshR,275.0
+Dpap,mu bod,mu bod,277.0
+Daap,mu bod,mu bod,278.0
+MSpapaaa,m5VR,m4VR,278.0
+ABaraapapa,m5L,ABaraapapaa,280.0
+ABalapappa,ABalapappaa,IL2DL,280.0
+ABarapapap,arc post V,I5,280.0
+ABalappppa,IL2DR,ABalappppaa,280.0
+ABaraaapap,mc1DR,m4R,280.0
+ABalpppppa,ADFL,AWBL,280.0
+MSaaaaap,m4DL,MSaaaaapa,280.0
+ABplpapppa,rect hyp,K,280.0
+ABplppppap,U,F,280.0
+MSaaapp,MSaaappa,vpi3D,280.0
+MSaapaaa,m5VL,m4VL,280.0
+ABalpaapap,mc1DL,m3L,280.0
+ABpraaappa,AWBR,ADFR,280.0
+ABprppppap,B,DVA,280.0
+ABaraapppa,ABaraapppaa,m5R,280.0
+ABplpaappp,ABplpaapppp,AIML,280.0
+ABplpppaap,PHAL,ABplpppaapa,285.0
+int7R,int7Rp,int7Ra,285.0
+int7L,int7La,int7Lp,285.0
+ABalpapaaa,RIPL,hyp2V,285.0
+ABplpapppp,rect D,PVT,285.0
+MSaaapaa,m4L,m3DL,285.0
+ABalapppap,URYDR,ABalapppapa,285.0
+ABalpppapp,ABalpppappa,ABalpppappp,285.0
+ABalppappp,IL2VL,ABalppapppa,285.0
+MSaaaapa,I4,m5DL,285.0
+ABalpapapa,RMDDL,ABalpapapap,285.0
+ABalapaapp,ABalapaappa,IL2L,285.0
+ABplaapapp,AIBL,ABplaapappp,285.0
+ABplapppap,ABplapppapa,ABplapppapp,285.0
+ABalaaappr,ILsoR,AVDR,285.0
+ABalaaapal,AVDL,ILsoL,285.0
+ABalapapap,URYDL,ABalapapapa,285.0
+ABalapappp,AVJL,CEPsoDL,290.0
+ABprpapppp,virR,virL,290.0
+ABprpappap,DB4,RIS,290.0
+ABalaapppp,ABalaappppa,IL2R,290.0
+ABarappppp,ABarapppppa,IL2VR,290.0
+ABaraappap,mc2DR,m2DR,290.0
+ABprpapapa,AVKR,exc gl R,290.0
+ABprapppap,ABprapppapa,ABprapppapp,290.0
+ABprpppaap,PHAR,ABprpppaapa,290.0
+ABprpappaa,RIH,AVL,290.0
+ABaraapaap,m2DL,mc2DL,290.0
+ABarapaapp,MCR,m3R,290.0
+ABplaapaap,AMshL,URBL,290.0
+ABplpaaaap,DB1,exc duct,290.0
+ABalppappa,BAGL,SMDVL,290.0
+ABalppppaa,ABalppppaav,ADLL,290.0
+ABplpapapa,exc gl L,AVKL,290.0
+ABalappppp,CEPsoDR,AVJR,290.0
+MSaappa,vpi2V,vpi3V,290.0
+ABpraaaapp,ABpraaaappp,ABpraaaappa,290.0
+MSaapapp,m6VL,vpi2DL,290.0
+ABalappapp,CANR,OLLsoR,290.0
+ABalapaaap,CANL,OLLsoL,290.0
+MSpaaaap,m4DR,m3DR,290.0
+MSpapapp,m6VR,vpi2DR,290.0
+ABarappapa,ABarappapap,RMDDR,292.0
+ABalppapap,SAADL,ILsoVL,292.0
+ABprpaaaap,DB3,G1,293.0
+ABprpppppa,mu sph,mu bod,293.0
+ABprpppppp,hyp10,tail spike,293.0
+ABprppppaa,rect VR,PVPR,293.0
+ABprpppaaa,DA7,PDA,293.0
+ABalppaaap,AVAL,OLQsoVL,295.0
+ABpraapaap,URBR,AMshR,295.0
+ABplpaaapp,URYVL,ABplpaaappa,295.0
+ABplpaaaaa,SAAVL,AWCL,295.0
+ABalpaappp,hyp1DL,hyp2DL,295.0
+ABpraaapaa,ADLR,ABpraaapaav,295.0
+ABpraapapp,AIBR,ABpraapappp,295.0
+ABalpappaa,ABalpappaap,ABalpappaaa,295.0
+ABplppppaa,PVPL,rect VL,295.0
+ABplpppppa,mu anal,mu int L,295.0
+ABplpppppp,tail spike,hyp10,295.0
+ABplppapaa,ABplppapaaa,SABD,295.0
+ABalaappap,OLQsoVR,AVAR,295.0
+ABplpapapp,SIAVL,DB5,295.0
+ABplpaappa,ASHL,RIBL,295.0
+ABplpppaaa,DA9,DA6,295.0
+ABprppapaa,ABprppapaaa,DA1,295.0
+ABprpaaapp,URYVR,ABprpaaappa,295.0
+ABarappppa,SMDVR,BAGR,295.0
+ABarapppaa,RMDVR,ILshVR,295.0
+ABalaapapp,ABalaapappa,CEPsoVR,295.0
+ABprpaappp,AIMR,ABprpaapppp,295.0
+ABaraaapaa,e2DR,arc post DR,295.0
+ABplaaaaap,ABplaaaaapp,ABplaaaaapa,295.0
+ABarpapaap,ABarpapaapp,ABarpapaapa,295.0
+ABalaaapar,ILshDL,ABalaaaparl,295.0
+ABalaaappl,ABalaaapplr,ILshDR,295.0
+ABarapppap,SAADR,ILsoVR,295.0
+ABprpapppa,AVG,RIR,295.0
+ABprppaaaa,SIBDR,ABprppaaaap,297.0
+ABprpapapp,SIAVR,DA8,297.0
+ABprpaaaaa,AWCR,SAAVR,297.0
+ABplppaaaa,ABplppaaaap,SIBDL,298.0
+ABalpaapaa,e2DL,arc post DL,300.0
+ABalppapaa,RMDVL,ILshVL,300.0
+ABarappapp,SMBVR,DB2,300.0
+ABaraapaaa,m1DL,e3D,300.0
+ABprpaappa,RIBR,ASHR,300.0
+ABaraaappp,hyp1DR,arc ant DR,300.0
+ABprapappp,ABprapapppa,ABprapapppp,300.0
+ABprpaapaa,AVBR,RIVR,300.0
+ABprpapaap,SIBVR,SIADR,300.0
+MSpaaapp,m6D,m5DR,300.0
+ABplpapaap,SIADL,SIBVL,300.0
+ABpraaapap,ABpraaapapp,ABpraaapapa,300.0
+ABalppppap,ABalppppapp,ABalppppapa,300.0
+MSaaaapp,MSaaaappa,m7D,300.0
+MSaaapap,mc3DL,m8,300.0
+ABprpaapap,AMsoR,CEMVR,303.0
+ABalapppaa,ALA,RMED,303.0
+ABalpapapp,SMBVL,ABalpapappa,305.0
+ABplppaapp,AIAL,DB6,305.0
+ABalpppapa,RMDL,AFDL,305.0
+ABplpapaaa,AIYL,SMDDL,305.0
+ABpraapaaa,ILsoDR,hyp3,305.0
+MSpaapap,vpi1,mc3DR,305.0
+ABplpaapaa,AVBL,RIVL,305.0
+ABpraaaapa,RMDR,AFDR,305.0
+ABalpaappa,arc post VL,arc ant DL,305.0
+ABaraaappa,arc post D,arc post VR,305.0
+ABprpapaaa,SMDDR,AIYR,305.0
+ABprppaapp,AIAR,DB7,305.0
+ABalppaapp,CEPsoVL,ABalppaappa,305.0
+ABplpaaapa,URAVL,CEPshVL,305.0
+ABplapappp,ABplapapppp,ABplapapppa,305.0
+ABaraappaa,MI,m1DR,305.0
+ABarappaaa,ABarappaaap,RIPR,305.0
+ABprapaaap,ABprapaaapa,RMGR,305.0
+ABplapaaap,ABplapaaapa,RMGL,306.0
+ABplapaaaa,ABplapaaaap,ABplapaaaaa,307.0
+ABprppappa,RIGR,DD2,307.0
+ABplppappa,DD1,RIGL,308.0
+ABarapapaa,ABarapapaap,ABarapapaaa,308.0
+ABplaapaaa,ILsoDL,hyp3,310.0
+ABplapppaa,PVQL,ABplapppaap,310.0
+ABalpapaap,ABalpapaapp,arc ant V,310.0
+ABplppaapa,ABplppaapaa,RIML,310.0
+ABpraapapa,AWAR,ASGR,310.0
+ABplpaapap,AMsoL,CEMVL,310.0
+ABalaaaarl,ABalaaaarla,RMEL,310.0
+Cappaa,mu bod,mu bod,310.0
+Cpppaa,mu bod,mu bod,310.0
+ABprpaaapa,URAVR,CEPshVR,310.0
+ABplaapapa,AWAL,ASGL,310.0
+ABalaapppa,RIAR,ABalaapppap,310.0
+ABarapppppa,IL1VR,ABarapppppap,310.0
+ABalaaaarr,RMER,ABalaaaarra,310.0
+ABprapaaaa,ABprapaaaaa,ABprapaaaap,310.0
+ABpraaaaaa,AVER,OLQshVR,315.0
+ABalpppaaa,AVEL,OLQshVL,315.0
+ABarpaaapa,CEPshDR,OLQshDR,315.0
+ABprppapap,DA5,DA3,315.0
+ABprppaapa,RIMR,ABprppaapaa,315.0
+ABarappaap,hyp1V,ABarappaapp,315.0
+ABprapppaa,PVQR,ABprapppaap,315.0
+ABplppapap,DA4,DA2,315.0
+ABalapaapa,RIAL,ABalapaapap,317.0
+ABalaaaalp,ABalaaaalpa,ILshL,317.0
+ABalaapaap,ABalaapaapa,ILshR,317.0
+ABalpapppa,ABalpapppap,I1L,318.0
+ABarapappa,ABarapappap,I1R,318.0
+ABarapaaaa,e3VR,m2VR,318.0
+ABarpaaaaa,OLQsoDL,OLQsoDR,320.0
+ABplppappp,DD3,DD5,320.0
+ABarpapaaa,URADR,CEMDR,320.0
+ABprppappp,DD6,DD4,320.0
+ABalpppaap,OLLshL,ABalpppaapv,320.0
+MSpaaapa,M5,I6,320.0
+ABaraapppp,M3R,M2R,320.0
+ABarapaaap,m1VR,ABarapaaapp,320.0
+ABplaaaaaa,CEMDL,URADL,320.0
+ABarpaaaap,CEPshDL,OLQshDL,320.0
+ABalpaaaap,m1VL,ABalpaaaapp,320.0
+ABalpaaaaa,m2VL,e3VL,320.0
+Cpppap,mu bod,mu bod,322.0
+Capppa,mu bod,mu bod,322.0
+Cppppa,mu bod,mu bod,322.0
+Capaaa,mu bod,mu bod,322.0
+Cappap,mu bod,mu bod,322.0
+Cppaaa,mu bod,mu bod,322.0
+ABalappapa,ABalappapap,AVHR,325.0
+ABaraapapp,M2L,M3L,325.0
+Cppapa,mu bod,mu bod,325.0
+ABaraaaaaa,e1VL,m1L,325.0
+ABalaaaala,ABalaaaalar,AINL,325.0
+ABalaapaaa,ABalaapaaal,AINR,325.0
+MSpaapaa,MSpaapaap,M1,325.0
+ABaraaaapa,e1D,ABaraaaapaa,325.0
+Capapa,mu bod,mu bod,325.0
+ABpraaaaap,OLLshR,ABpraaaaapv,325.0
+MSpaaaaa,MSpaaaaap,M4,330.0
+ABplpppaapa,PVCL,LUAL,330.0
+ABaraaaaap,e1VR,m1R,330.0
+Cppppp,mu bod,mu bod,330.0
+Cppapp,mu bod,mu bod,330.0
+Caapa,DVC,Caapap,330.0
+Capppp,mu bod,mu bod,330.0
+Capapp,mu bod,mu bod,330.0
+Capaap,mu bod,mu bod,330.0
+Cppaap,mu bod,mu bod,330.0
+ABalapaaaa,AVHL,ABalapaaaap,335.0
+ABalpaaapp,MCL,ABalpaaappa,337.0
+MSaapppa,mu bod,mu bod,340.0
+ABalappaap,ABalappaapp,RID,340.0
+ABarapaapa,m2R,ABarapaapap,340.0
+Dappa,mu bod,mu bod,340.0
+Dpppa,mu bod,mu bod,340.0
+ABalppppppa,ABalppppppap,ASEL,342.0
+ABalppppppp,AUAL,ASJL,342.0
+ABalpaaapa,m2L,ABalpaaapap,342.0
+MSpapppa,mu bod,mu bod,345.0
+ABpraaapppa,ASER,ABpraaapppap,350.0
+MSaaaaapa,I3,g1P,350.0
+MSaapapa,g2L,MSaapapap,350.0
+ABpraaapppp,AUAR,ASJR,350.0
+MSaaaaaa,GLRDL,GLRDR,350.0
+MSpapapa,MSpapapap,g2R,355.0
+Dappp,mu bod,mu bod,360.0
+Dpppp,mu bod,mu bod,360.0
+Earaa,int1DR,int1VR,360.0
+Ealaa,int1DL,int1VL,360.0
+MSpapppp,mu bod,mu bod,365.0
+MSppaaaa,GLRVR,GLRR,370.0
+MSaapppp,mu bod,mu bod,370.0
+MSapaaaa,GLRVL,GLRL,370.0
+Eprpp,int8R,int9R,375.0
+Eplpp,int8L,int9L,375.0
+ABalpppappp,ASKL,ABalpppapppp,375.0
+MSaapaapa,g1AL,MSaapaapap,380.0
+MSpapaapa,g1AR,MSpapaapap,380.0
+ABarpapaapp,URXR,CEPDR,380.0
+ABplaaaaapp,URXL,CEPDL,380.0
+ABpraaaappp,ABpraaaapppp,ASKR,385.0
+ABarapapaap,I2R,ABarapapaapp,385.0
+ABalpappaap,ABalpappaapp,I2L,385.0
+ABalapappaa,IL1DL,ABalapappaap,390.0
+ABalpapapap,SMBDL,ABalpapapapa,390.0
+ABalappppaa,IL1DR,ABalappppaap,390.0
+ABpraapappp,ABpraapapppp,ASIR,395.0
+ABprapapppp,ABprapappppa,ABprapappppp,395.0
+ABalapaappa,IL1L,ABalapaappap,397.0
+ABplaapappp,ABplaapapppp,ASIL,400.0
+ABalapppapa,OLQDR,ABalapppapap,400.0
+ABplapapppp,ABplapappppa,ABplapappppp,400.0
+ABalapapapa,OLQDL,ABalapapapap,400.0
+ABplpaapppp,ABplpaappppp,CEPVL,400.0
+ABpraaapapa,OLLR,ABpraaapapap,405.0
+ABplapppapp,PHBL,HSNL,405.0
+ABprapppapp,PHBR,HSNR,405.0
+ABarappapap,SMBDR,ABarappapapa,405.0
+ABprpaaappa,ABprpaaappap,OLQVR,408.0
+ABprpaapppp,CEPVR,ABprpaappppp,408.0
+ABplppaaaap,ABplppaaaapa,RICL,408.0
+ABalppapppa,IL1VL,ABalppapppap,410.0
+ABalaappppa,IL1R,ABalaappppap,410.0
+ABalppppapa,ABalppppapap,OLLL,410.0
+ABprppaaaap,RICR,ABprppaaaapa,415.0
+ABplppapaaa,SABVL,RIFL,415.0
+ABplpaaappa,ABplpaaappap,OLQVL,415.0
+ABaraapapaa,NSML,ABaraapapaad,415.0
+ABaraapppaa,NSMR,ABaraapppaad,415.0
+ABprppapaaa,SABVR,RIFR,415.0
+int8L,int8La,int8Lp,415.0
+int9R,int9Rp,int9Ra,415.0
+int9L,int9Lp,int9La,415.0
+int8R,int8Rp,int8Ra,415.0
+ABprapaaaap,ADAR,ADER,425.0
+ABprapaaapa,AIZR,FLPR,425.0
+ABplapaaapa,AIZL,FLPL,425.0
+ABplapaaaap,ADAL,ADEL,425.0
+ABarpppapp,BDUR,ALMR,435.0
+ABarppaapp,BDUL,ALML,435.0
+ABprpppaapa,PVCR,LUAR,435.0
+MSppapaa,ccAR,ccPR,440.0
+MSapapaa,ccAL,ccPL,440.0
+ABprapappppa,ALNR,PLMR,475.0
+ABplapappppa,PLML,ALNL,485.0
+ABprapapaa,QR,V5R,730.0
+ABplapapaa,QL,V5L,735.0
+QR,QRp,QRa,980.0
+QL,QLp,QLa,980.0
+V2R,hyp7,V2Rp,1100.0
+V2L,hyp7,V2Lp,1100.0
+V1R,hyp7,V1Rp,1100.0
+V4R,V4Rp,hyp7,1100.0
+V3L,hyp7,V3Lp,1100.0
+V5L,hyp7,V5Lp,1100.0
+V3R,hyp7,V3Rp,1100.0
+V1L,V1Lp,hyp7,1100.0
+V4L,V4Lp,hyp7,1100.0
+V5R,hyp7,V5Rp,1100.0
+V6L,V6Lp,hyp7,1106.0
+V6R,V6Rp,hyp7,1106.0
+TR,TRa,TRp,1112.0
+TL,TLa,TLp,1112.0
+QLp,QLpp,QLpa,1160.0
+QRp,QRpp,QRpa,1160.0
+QRa,AQR,QRaa,1160.0
+QLa,QLaa,PQR,1160.0
+M,Mv,Md,1190.0
+H2R,H2Rp,H2Ra,1220.0
+TLa,hyp7,TLap,1220.0
+W,Wa,Wp,1220.0
+H2L,H2Lp,H2La,1220.0
+TRa,TRap,hyp7,1220.0
+TRp,TRpp,TRpa,1226.0
+TLp,TLpa,TLpp,1226.0
+H1L,H1La,hyp7,1250.0
+H1R,hyp7,H1Ra,1250.0
+QLpa,SDQL,PVM,1280.0
+Z1,Z1p,Z1a,1280.0
+QRpa,AVM,SDQR,1280.0
+Mv,Mvl,Mvr,1280.0
+Z4,Z4a,Z4p,1310.0
+Md,Mdr,Mdl,1310.0
+P6,P6p,P6a,1340.0
+TLpp,TLppp,PVWL,1340.0
+TRpp,PVWR,TRppp,1340.0
+H2La,hyp7,ADEsoL,1340.0
+P5,P5p,P5a,1340.0
+H2Ra,ADEsoR,hyp7,1340.0
+Wp,VA1,VD1,1346.0
+TRpa,PHso1R,PHso2R,1346.0
+Wa,Wap,Waa,1346.0
+TLpa,PHso1L,PHso2L,1346.0
+P8,P8p,P8a,1370.0
+P10,hyp7,P10a,1370.0
+P7,P7a,P7p,1370.0
+P9,P9a,hyp7,1370.0
+P1a,P1aa,P1ap,1370.0
+Mvl,Mvlp,Mvla,1400.0
+P2a,P2aa,P2ap,1400.0
+Mvr,Mvra,Mvrp,1400.0
+P12,P12a,P12p,1430.0
+P11,hyp7,P11a,1430.0
+Z1a,gon herm dtc a,Z1ap,1430.0
+P6a,P6ap,P6aa,1430.0
+Z1p,Z1pp,Z1pa,1430.0
+Mdl,Mdlp,Mdla,1430.0
+Mdr,Mdrp,Mdra,1430.0
+P3a,P3ap,P3aa,1430.0
+P4a,P4ap,P4aa,1430.0
+P5a,P5ap,P5aa,1430.0
+Z4p,Z4pa,gon herm dtc B,1460.0
+P1aa,P1aap,P1aaa,1460.0
+Z4a,Z4aa,Z4ap,1460.0
+TLppp,TLpppa,TLpppp,1460.0
+TRppp,TRpppp,TRpppa,1460.0
+P10a,P10ap,P10aa,1490.0
+P7a,P7aa,P7ap,1490.0
+P9a,P9ap,P9aa,1490.0
+P8a,P8ap,P8aa,1490.0
+P1ap,AS1,VD2,1490.0
+Waa,AVFR,VB2,1490.0
+P2aa,P2aap,P2aaa,1490.0
+G1,RMHL,RMHR,1490.0
+K,rect hyp,DVB,1520.0
+P12a,P12ap,P12aa,1520.0
+TRpppa,PLNR,PHCR,1520.0
+P6aa,P6aaa,VC4,1520.0
+P2ap,AS2,VD3,1520.0
+P5aa,P5aaa,VC3,1520.0
+P3ap,VD4,AS3,1520.0
+P3aa,VC1,P3aaa,1520.0
+P4ap,VD5,AS4,1520.0
+P6ap,AS6,VD7,1520.0
+TLpppa,PHCL,PLNL,1520.0
+P4aa,VC2,P4aaa,1520.0
+Mvrp,Mvrpa,mu bod,1520.0
+P5ap,VD6,AS5,1520.0
+Mvla,mu bod,mu bod,1520.0
+P11a,P11ap,P11aa,1520.0
+Mvra,mu bod,mu bod,1520.0
+Mvlp,mu bod,Mvlpa,1520.0
+P9aa,P9aaa,P9aap,1550.0
+P9ap,AS9,VD10,1550.0
+P7ap,VD8,AS7,1550.0
+P8aa,VC6,P8aaa,1550.0
+P7aa,VC5,P7aaa,1550.0
+P8ap,AS8,VD9,1550.0
+P10ap,VD11,AS10,1550.0
+P10aa,P10aaa,P10aap,1550.0
+Mdla,mu bod,mu bod,1580.0
+P11aa,P11aaa,P11aap,1580.0
+P2aaa,VA2,VB3,1580.0
+P12aa,P12aap,P12aaa,1580.0
+P12ap,VD13,PDB,1580.0
+P12p,P12pp,hyp12,1580.0
+Mdra,mu bod,mu bod,1580.0
+P1aaa,AVFL,VB1,1580.0
+P11ap,VD12,AS11,1580.0
+P3aaa,VB4,VA3,1610.0
+P4aaa,VA4,VB5,1610.0
+P5aaa,VB6,VA5,1610.0
+P6aaa,VA6,VB7,1610.0
+P9aaa,VB10,VA9,1640.0
+P8aaa,VB9,VA8,1640.0
+P7aaa,VB8,VA7,1640.0
+Mdrp,cc herm DR,mu bod,1640.0
+Mdlp,mu bod,cc herm DL,1640.0
+P10aaa,VB11,VA10,1640.0
+Mvlpa,mu bod,Mvlpaa,1670.0
+Mvrpa,mu bod,Mvrpaa,1670.0
+P12aaa,VA12,P12aaap,1730.0
+P11aaa,P11aaap,VA11,1730.0
+H2Rp,H2Rpp,hyp7,1760.0
+V1Lp,V1Lpa,V1Lpp,1760.0
+V1Rp,V1Rpa,V1Rpp,1760.0
+V5Rp,V5Rpa,V5Rpp,1760.0
+V4Lp,V4Lpp,V4Lpa,1760.0
+V4Rp,V4Rpa,V4Rpp,1760.0
+V3Lp,V3Lpp,V3Lpa,1760.0
+V2Lp,V2Lpp,V2Lpa,1760.0
+V5Lp,V5Lpa,V5Lpp,1760.0
+V2Rp,V2Rpp,V2Rpa,1760.0
+V3Rp,V3Rpa,V3Rpp,1760.0
+H2Lp,H2Lpp,hyp7,1760.0
+H1La,se,H1Lap,1772.0
+H1Ra,H1Rap,se,1772.0
+V6Rp,V6Rpa,V6Rpp,1808.0
+V6Lp,V6Lpa,V6Lpp,1808.0
+V2Rpa,hyp7,V2Rpap,1820.0
+V2Rpp,V2Rppp,hyp7,1820.0
+V1Lpp,V1Lppp,hyp7,1820.0
+V1Lpa,V1Lpap,hyp7,1820.0
+V3Rpa,V3Rpap,hyp7,1820.0
+V3Rpp,V3Rppp,hyp7,1820.0
+V1Rpp,hyp7,V1Rppp,1820.0
+V1Rpa,hyp7,V1Rpap,1820.0
+V2Lpa,V2Lpap,hyp7,1820.0
+Z4ap,Z4apa,Z4app,1820.0
+V2Lpp,hyp7,V2Lppp,1820.0
+V4Rpp,hyp7,V4Rppp,1820.0
+V5Rpa,V5Rpap,V5Rpaa,1820.0
+V3Lpp,hyp7,V3Lppp,1820.0
+V3Lpa,V3Lpap,hyp7,1820.0
+Z4aa,Z4aap,Z4aaa,1820.0
+V4Lpp,hyp7,V4Lppp,1820.0
+V4Rpa,hyp7,V4Rpap,1820.0
+V4Lpa,hyp7,V4Lpap,1820.0
+V5Rpp,hyp7,V5Rppp,1820.0
+Z1pa,Z1paa,Z1pap,1820.0
+Z1pp,Z1ppa,gon herm anch,1820.0
+V5Lpp,V5Lppp,hyp7,1820.0
+V5Lpa,V5Lpaa,V5Lpap,1820.0
+TLap,TLapa,TLapp,1832.0
+TRap,TRapp,TRapa,1832.0
+V6Rpa,hyp7,V6Rpap,1880.0
+V6Lpp,V6Lppp,hyp7,1880.0
+V6Rpp,V6Rppp,hyp7,1880.0
+V5Lpaa,PDEL,V5Lpaap,1880.0
+V6Lpa,V6Lpap,hyp7,1880.0
+V5Rpaa,V5Rpaap,PDER,1880.0
+V5Rpap,PDEsoR,PDEshR,1886.0
+V5Lpap,PDEsoL,PDEshL,1886.0
+V5Lpaap,V5Lpaapp,PVDL,1940.0
+V5Rpaap,V5Rpaapp,PVDR,1940.0
+G2,exc socket,G2a,1940.0
+TRapp,PVNR,se,2000.0
+TRapa,hyp7,hyp7,2000.0
+TLapa,hyp7,hyp7,2000.0
+TLapp,PVNL,se,2000.0
+G2a,RMFR,RMFL,2240.0
+V4Lpap,hyp7,V4Lpapp,2300.0
+V5Rppp,V5Rpppp,hyp7,2300.0
+H2Rpp,hyp7,H2Rppp,2300.0
+V3Lpap,hyp7,V3Lpapp,2300.0
+V3Lppp,V3Lpppp,hyp7,2300.0
+V4Rpap,V4Rpapp,hyp7,2300.0
+V1Lpap,V1Lpapp,hyp7,2300.0
+V1Lppp,hyp7,V1Lpppp,2300.0
+V4Lppp,hyp7,V4Lpppp,2300.0
+V5Lppp,V5Lpppp,hyp7,2300.0
+V2Lppp,V2Lpppp,hyp7,2300.0
+V2Lpap,V2Lpapp,hyp7,2300.0
+V4Rppp,V4Rpppp,hyp7,2300.0
+V3Rppp,V3Rpppp,hyp7,2300.0
+V1Rppp,V1Rpppp,hyp7,2300.0
+H2Lpp,hyp7,H2Lppp,2300.0
+V3Rpap,hyp7,V3Rpapp,2300.0
+V1Rpap,V1Rpapp,hyp7,2300.0
+V2Rpap,hyp7,V2Rpapp,2300.0
+V2Rppp,hyp7,V2Rpppp,2300.0
+V6Lppp,V6Lpppp,hyp7,2330.0
+V6Rppp,hyp7,V6Rpppp,2330.0
+V6Rpap,hyp7,V6Rpapp,2330.0
+V6Lpap,V6Lpapp,hyp7,2330.0
+H1Lap,H1Lapp,hyp7,2360.0
+H1Rap,H1Rapp,hyp7,2360.0
+Z4apa,Z4apap,Z4apaa,2420.0
+Z1pap,Z1papa,Z1papp,2420.0
+Z4app,gon herm dish P,Z4appa,2450.0
+Z4pa,Z4paa,gon herm dish P,2450.0
+Z1paa,gon herm dish A,Z1paap,2450.0
+Z1ap,gon herm dish A,Z1app,2450.0
+Z4apaa,Z4apaap,Z4apaaa,2480.0
+Z1ppa,Z1ppaa,Z1ppap,2480.0
+Z4aap,Z4aapp,Z4aapa,2480.0
+Z4aaa,Z4aaaa,Z4aaap,2480.0
+Z4apap,Z4apapp,Z4apapa,2480.0
+Z1papa,Z1papaa,Z1papap,2510.0
+Z1papp,Z1pappp,Z1pappa,2510.0
+P4p,hyp7,hyp7,2540.0
+P7p,P7pa,P7pp,2540.0
+P8p,hyp7,hyp7,2540.0
+P6p,P6pp,P6pa,2540.0
+Mvrpaa,Mvrpaap,Mvrpaaa,2540.0
+P3p,hyp7,hyp7,2540.0
+P5p,P5pa,P5pp,2540.0
+Mvlpaa,Mvlpaap,Mvlpaaa,2540.0
+Z4appa,Z4appaa,Z4appap,2630.0
+Z4apapa,Z4apapaa,Z4apapap,2630.0
+Z4paa,Z4paaa,Z4paap,2630.0
+Z4apaap,Z4apaapp,Z4apaapa,2630.0
+P7pa,P7pap,vulD,2660.0
+P6pa,P6paa,P6pap,2660.0
+P7pp,P7ppp,P7ppa,2660.0
+Z4apaaa,Z4apaaap,Z4apaaaa,2660.0
+Z4apapp,Z4apappp,Z4apappa,2660.0
+Z1pappp,Z1papppa,Z1papppp,2660.0
+Z1ppaa,Z1ppaap,Z1ppaaa,2660.0
+Z1app,Z1appp,Z1appa,2660.0
+Z1pappa,Z1pappap,Z1pappaa,2660.0
+Z4aaaa,Z4aaaap,Z4aaaaa,2660.0
+Z4aaap,Z4aaapa,Z4aaapp,2660.0
+Z1ppap,Z1ppapp,Z1ppapa,2660.0
+Z1papaa,Z1papaap,Z1papaaa,2660.0
+Z1papap,Z1papapp,Z1papapa,2660.0
+P5pa,P5pap,P5paa,2660.0
+Z4aapp,Z4aappp,Z4aappa,2660.0
+P6pp,P6ppp,P6ppa,2660.0
+Z4aapa,Z4aapap,Z4aapaa,2660.0
+P5pp,P5ppa,vulD,2660.0
+Z1paap,Z1paapp,Z1paapa,2660.0
+Mvrpaap,Mvrpaapp,Mvrpaapa,2690.0
+Mvrpaaa,Mvrpaaaa,Mvrpaaap,2690.0
+Mvlpaap,Mvlpaapp,Mvlpaapa,2690.0
+Mvlpaaa,Mvlpaaap,Mvlpaaaa,2690.0
+P6paa,vulE,vulE,2720.0
+P7ppa,vulB,vulB,2720.0
+P5pap,vulB,vulB,2720.0
+P6ppp,vulE,vulE,2720.0
+P5paa,vulA,vulA,2720.0
+P7ppp,vulA,vulA,2720.0
+P6ppa,vulF,vulF,2780.0
+P7pap,vulC,vulC,2780.0
+P6pap,vulF,vulF,2780.0
+P5ppa,vulC,vulC,2780.0
+Z4appap,Z4appapa,Z4appapp,2810.0
+Z4appaa,Z4appaap,Z4appaaa,2810.0
+Z4apapap,Z4apapapp,Z4apapapa,2810.0
+Z1appa,Z1appap,Z1appaa,2810.0
+Z4apaapa,Z4apaapaa,Z4apaapap,2810.0
+Z4apaapp,Z4apaappp,Z4apaappa,2810.0
+Z4apapaa,Z4apapaaa,Z4apapaap,2810.0
+Z1appp,Z1apppa,Z1apppp,2810.0
+Z4paap,Z4paapp,Z4paapa,2810.0
+Z4paaa,Z4paaaa,Z4paaap,2810.0
+Z1paapp,Z1paappa,Z1paappp,2810.0
+Z1paapa,Z1paapap,Z1paapaa,2810.0
+H2Lppp,hyp7,se,2840.0
+H2Rppp,hyp7,se,2840.0
+Z1papapa,Z1papapap,Z1papapaa,2840.0
+V4Rpppp,hyp7,se,2840.0
+V4Rpapp,se,hyp7,2840.0
+V4Lpppp,hyp7,se,2840.0
+V4Lpapp,se,hyp7,2840.0
+V5Lpppp,hyp7,se,2840.0
+Z1ppaaa,Z1ppaaap,Z1ppaaaa,2840.0
+V5Rpppp,se,hyp7,2840.0
+Z1ppaap,Z1ppaapa,Z1ppaapp,2840.0
+Z1papapp,Z1papappp,Z1papappa,2840.0
+Z1pappaa,Z1pappaaa,Z1pappaap,2840.0
+Z1pappap,Z1pappapp,Z1pappapa,2840.0
+V1Rpppp,hyp7,se,2840.0
+V1Rpapp,hyp7,se,2840.0
+Z4aappa,Z4aappaa,Z4aappap,2840.0
+Z4aappp,Z4aapppp,Z4aapppa,2840.0
+V2Lpapp,se,hyp7,2840.0
+V2Lpppp,se,hyp7,2840.0
+Z4aaapp,gon herm vut,gon herm vut,2840.0
+Z4aaapa,gon herm vut,gon herm vut,2840.0
+Z4aapap,Z4aapapa,Z4aapapp,2840.0
+Z4aapaa,gon herm vut,gon herm vut,2840.0
+V3Rpapp,hyp7,se,2840.0
+V3Rpppp,hyp7,se,2840.0
+V3Lpapp,hyp7,se,2840.0
+V3Lpppp,hyp7,se,2840.0
+Z4aaaap,gon herm vut,gon herm vut,2840.0
+Z4aaaaa,Z4aaaaaa,Z4aaaaap,2840.0
+Z1ppapp,gon herm vut,gon herm vut,2840.0
+Z1ppapa,gon herm vut,gon herm vut,2840.0
+Mvlpaapa,vm1,vm2,2840.0
+Mvlpaapp,um2,um1,2840.0
+Mvlpaaap,vm2,vm1,2840.0
+Mvrpaaaa,um2,um1,2840.0
+Mvrpaaap,vm1,vm2,2840.0
+Mvrpaapa,vm2,vm1,2840.0
+Mvlpaaaa,um2,um1,2840.0
+Mvrpaapp,um1,um2,2840.0
+V2Rpapp,hyp7,se,2840.0
+V2Rpppp,se,hyp7,2840.0
+V1Lpapp,hyp7,se,2840.0
+V1Lpppp,se,hyp7,2840.0
+Z4apaaap,gon herm spth A,gon herm sujn A,2840.0
+Z4apaaaa,gon herm spth A,gon herm spth A,2840.0
+Z1paappa,Z1paappap,Z1paappaa,2870.0
+Z1paapaa,gon herm prsh A,gon herm prsh A,2870.0
+Z1appaa,gon herm prsh A,gon herm prsh A,2870.0
+Z1papppp,gon herm spth P,gon herm spth P,2870.0
+Z1papppa,gon herm sujn P,gon herm spth P,2870.0
+Z1apppa,Z1apppap,Z1apppaa,2870.0
+Z1papaap,gon herm spth A,gon herm sujn A,2870.0
+Z1papaaa,gon herm spth A,gon herm spth A,2870.0
+Z4apappa,gon herm spth P,gon herm sujn P,2870.0
+Z4apappp,gon herm spth P,gon herm spth P,2870.0
+Z4paaap,Z4paaapa,Z4paaapp,2882.0
+Z4appaap,Z4appaapp,Z4appaapa,2882.0
+Z4appapp,posterior sheath,posterior sheath,2882.0
+Z1appap,gon herm prsh A,gon herm prsh A,2900.0
+Z4appapa,posterior sheath,posterior sheath,2900.0
+Z1apppp,gon herm spth A,gon herm spth A,2900.0
+Z1paappp,gon herm spth A,gon herm spth A,2900.0
+Z1paapap,gon herm prsh A,gon herm prsh A,2900.0
+V6Rpppp,se,hyp7,2900.0
+V6Rpapp,hyp7,se,2900.0
+V6Lpapp,se,hyp7,2900.0
+Z4aapppa,gon herm vut,gon herm sujn P,2900.0
+Z4aaaaap,gon herm vut,gon herm vut,2900.0
+Z4aaaaaa,gon herm vut,gon herm vut,2900.0
+Z4aapapa,gon herm vut,gon herm vut,2900.0
+Z4aapapp,gon herm vut,gon herm vut,2900.0
+Z4aappap,gon herm vut,gon herm vut,2900.0
+Z4aappaa,gon herm vut,gon herm vut,2900.0
+Z4aapppp,gon herm sujn P,gon herm vut,2900.0
+Z4appaaa,gon herm spth P,gon herm spth P,2900.0
+Z4paapa,gon herm prsh P,gon herm prsh P,2900.0
+Z4paapp,gon herm prsh P,gon herm prsh P,2900.0
+V6Lpppp,hyp7,se,2900.0
+Z1ppaaaa,gon herm sujn A,gon herm vut,2900.0
+Z1ppaaap,gon herm sujn A,gon herm vut,2900.0
+Z1ppaapa,gon herm vut,gon herm vut,2900.0
+Z1ppaapp,gon herm vut,gon herm vut,2900.0
+Z1pappapa,gon herm dut,gon herm dut,2930.0
+Z1papapaa,gon herm sujn A,gon herm dut,2930.0
+Z1papapap,gon herm dut,gon herm dut,2930.0
+Z1papappa,gon herm dut,gon herm dut,2930.0
+Z1pappaaa,gon herm dut,gon herm dut,2930.0
+H1Lapp,se,hyp7,2930.0
+H1Rapp,hyp7,se,2930.0
+Z4paaaa,gon herm spth P,gon herm spth P,2930.0
+Z1papappp,gon herm dut,gon herm dut,2930.0
+Z1pappapp,gon herm sujn P,gon herm dut,2930.0
+Z1pappaap,gon herm dut,gon herm dut,2930.0
+Z1apppap,gon herm spth A,Z1apppapa,2960.0
+Z1paappaa,Z1paappaap,Z1paappaaa,2960.0
+Z4apapapa,gon herm dut,gon herm dut,2960.0
+Z4apapapp,gon herm sujn P,gon herm dut,2960.0
+Z4apapaap,gon herm dut,gon herm dut,2960.0
+Z4apaapaa,gon herm dut,gon herm sujn A,2960.0
+Z4apaappp,gon herm dut,gon herm dut,2960.0
+Z4apaappa,gon herm dut,gon herm dut,2960.0
+Z4appaapp,Z4appaappa,Z4appaappp,2960.0
+Z4appaapa,gon herm spth P,Z4appaapap,2960.0
+Z4paaapp,Z4paaappp,Z4paaappa,2960.0
+Z4paaapa,Z4paaapap,gon herm spth P,2960.0
+Z1paappap,gon herm spth A,Z1paappapa,2960.0
+Z1apppaa,Z1apppaaa,Z1apppaap,2960.0
+Z4apapaaa,gon herm dut,gon herm dut,2960.0
+Z4apaapap,gon herm dut,gon herm dut,2960.0
+Z4appaappp,gon herm spth P,gon herm spth P,2972.0
+Z1paappaaa,gon herm spth A,gon herm spth A,2990.0
+Z4appaappa,gon herm spth P,gon herm spth P,2990.0
+Z4appaapap,gon herm spth P,gon herm spth P,2990.0
+Z4paaappp,gon herm spth P,gon herm spth P,2990.0
+Z4paaapap,gon herm spth P,gon herm spth P,2990.0
+Z1apppaaa,gon herm spth A,gon herm spth A,2990.0
+Z4paaappa,gon herm spth P,gon herm spth P,2990.0
+Z1paappaap,gon herm spth A,gon herm spth A,3020.0
+Z1paappapa,gon herm spth A,gon herm spth A,3020.0
+Z1apppaap,gon herm spth A,gon herm spth A,3020.0
+Z1apppapa,gon herm spth A,gon herm spth A,3020.0
