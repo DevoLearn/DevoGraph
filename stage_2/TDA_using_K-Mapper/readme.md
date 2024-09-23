@@ -24,6 +24,7 @@ To get started, clone this repository:
 
 ```bash
 git clone https://github.com/DevoLearn/DevoGraph.git
+cd DevoGraph/stage_2/TDA_using_K-Mapper
 ```
 
 
@@ -31,16 +32,25 @@ git clone https://github.com/DevoLearn/DevoGraph.git
 
 Follow these steps to run the analysis:
 
-1. **Prepare the Data**: You can either use the data file(*cell-by-cell-data-v2.xlsx*) in the same folder or upload your own and update paths in the *kmapper.ipynb* file accordingly. 
-2. **Run Kepler Mapper**: Execute the *kmapper.ipynb* file.
-3. **Visualize the Results**: Go to the *output* folder and open the generated HTML files in the in a web browser to explore the topological network.
+1. **Prepare the Data**: 
+   - Use the provided `cell-by-cell-data-v2.xlsx` file in the same folder, or
+   - Upload your own data and update paths in the `kmapper.ipynb` file accordingly.
 
-**Note: This *kmapper.ipynb* file was run in the colab environment therefore the paths may vary while running in your local system. Please update the paths accordingly** 
+2. **Run Kepler Mapper**: 
+   ```bash
+   jupyter notebook kmapper.ipynb
+   ```
+
+3. **Visualize the Results**: 
+   - Navigate to the `output` folder
+   - Open the generated HTML files in a web browser to explore the topological network
+
+**Note**: This `kmapper.ipynb` file was originally run in a Colab environment. If running locally, please update the file paths accordingly.
 
 
 ## Data
 
-The dataset used in this project contains information about the connectivity of cells in C. elegans. The data is provided in an Excel file with multiple sheets, each detailing different aspects of cell connectivity and lineage, out of which *daughter-of-database* sheet has been used.
+The dataset used in this project contains information about the connectivity of cells in C. elegans. The data is provided in an Excel file with multiple sheets, each detailing different aspects of cell connectivity and lineage, out of which `daughter-of-database` sheet has been used.
 
 #### Sheet overview:
 - **daughter-of-database**: Contains information about the lineage and connections between cells.
