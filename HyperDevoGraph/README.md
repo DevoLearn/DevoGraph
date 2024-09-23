@@ -1,4 +1,4 @@
-# Devoworm CE-Raw & Cell-Phenotype-Lineage Data Analysis
+# HyperDevoGraph: Modeling C. elegans Development with Hypergraph
 
 ## Introduction
 
@@ -119,8 +119,6 @@ python hypergraph_analysis.py
 - Ensure that the data files are correctly formatted and located in the data directory.
 - The script generates plots using matplotlib. Make sure your environment supports GUI operations if running locally.
 
-## License
-This project is licensed under the MIT License.
 
 
 
