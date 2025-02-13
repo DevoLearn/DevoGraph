@@ -7,36 +7,43 @@ import torch_geometric
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from torch_geometric.data import Data
 from mpl_toolkits.mplot3d import Axes3D
+from typing import Dict, List, Union, Optional, Tuple  # added for type annotations
 
 
 class Graph:
-    def __init__(self, nodes, edge_dict, labels):
+    def __init__(self, nodes: torch.Tensor, edge_dict: Dict[int, List[int]], labels: Dict[int, Union[str, int]]) -> None:
         """
         Initialize the Graph object.
         
         Args:
             nodes (torch.Tensor): Tensor representing node features.
-            edge_dict (dict): Dictionary representing edges, where keys are node indices, and values are lists of neighbors.
-            labels (dict): Dictionary where keys are node indices, and values are node labels.
+            edge_dict (Dict[int, List[int]]): Dictionary representing edges.
+            labels (Dict[int, Union[str, int]]): Dictionary mapping node indices to labels.
         """
         self.nodes = nodes
         self.edge_dict = edge_dict
         self.labels = labels
 
-    def add_daughter_cells(self, daughters, parent_index, daughter_labels):
+    def add_daughter_cells(self, daughters: torch.Tensor, parent_index: int, daughter_labels: List[Union[str, int]]) -> Tuple['Graph', torch.Tensor]:
         """
-        Add daughter cells in place of the parent cell and update labels and edges.
+        Replace a parent cell with daughter cells, updating labels and edges.
 
         Args:
-            daughters (torch.Tensor): Tensor representing the embeddings of the daughter nodes.
-            parent_index (int): Index of the parent node to be replaced.
-            daughter_labels (list): List containing labels for the daughter nodes.
+            daughters (torch.Tensor): Embeddings of daughter nodes.
+            parent_index (int): Index of the parent node.
+            daughter_labels (List[Union[str, int]]): Labels for the daughter nodes (must have exactly two elements).
 
         Returns:
-            Graph: Updated graph with daughter nodes.
-            torch.Tensor: Updated node embeddings.
+            Tuple[Graph, torch.Tensor]: Updated graph and updated node embeddings.
+
+        Raises:
+            ValueError: If daughter_labels does not contain exactly two elements or parent_index is invalid.
         """
+        if len(daughter_labels) != 2:
+            raise ValueError("daughter_labels must contain exactly two elements.")
         keys = list(self.labels.keys())
+        if parent_index not in keys:
+            raise ValueError("parent_index not found in graph labels.")
         parent_pos = keys.index(parent_index)
 
         # Backup the part of the labels before the parent
@@ -57,20 +64,25 @@ class Graph:
 
         return self.add_remove_nodes(daughters, parent_pos)
 
-    def add_remove_nodes(self, new_nodes, parent_index):
+    def add_remove_nodes(self, new_nodes: torch.Tensor, parent_index: int) -> Tuple['Graph', torch.Tensor]:
         """
-        Remove the parent node and add new daughter nodes.
+        Remove the parent node and insert new daughter nodes.
 
         Args:
-            new_nodes (torch.Tensor): Embeddings of the new nodes (daughters).
+            new_nodes (torch.Tensor): Embeddings for the daughter nodes.
             parent_index (int): Index of the parent node to be removed.
 
         Returns:
-            Graph: Updated graph with daughter nodes.
-            torch.Tensor: Updated node embeddings.
+            Tuple[Graph, torch.Tensor]: Updated graph and node embeddings.
+
+        Raises:
+            IndexError: If parent_index is out of bounds.
         """
         if new_nodes.dim() == 1:
             new_nodes = new_nodes.unsqueeze(0)
+
+        if parent_index < 0 or parent_index >= self.nodes.size(0):
+            raise IndexError("parent_index is out of bounds.")
 
         # Split the array at the parent index into two arrays
         left_nodes = self.nodes[:parent_index]
@@ -80,22 +92,28 @@ class Graph:
 
         return Graph(self.nodes, self.edge_dict, self.labels), self.nodes
 
-    def update_edge_dict(self, parent_index, daughter1, daughter2):
+    def update_edge_dict(self, parent_index: int, daughter1: Union[str, int], daughter2: Union[str, int]) -> None:
         """
-        Update the edge_dict of the graph after adding daughter cells and removing a parent cell.
+        Update the edge_dict after removing a parent node and adding daughter nodes.
         
         Args:
             parent_index (int): Index of the parent node.
-            daughter1 (str): Label of the first daughter node.
-            daughter2 (str): Label of the second daughter node.
+            daughter1 (Union[str, int]): Label for the first daughter node.
+            daughter2 (Union[str, int]): Label for the second daughter node.
+        
+        Raises:
+            ValueError: If daughter labels cannot be found in the labels.
         """
         parent_neighbors = self.edge_dict.get(parent_index, [])
 
         if parent_index in self.edge_dict:
             del self.edge_dict[parent_index]
 
-        daughter1_index = list(self.labels.keys())[list(self.labels.values()).index(daughter1)]
-        daughter2_index = list(self.labels.keys())[list(self.labels.values()).index(daughter2)]
+        try:
+            daughter1_index = list(self.labels.keys())[list(self.labels.values()).index(daughter1)]
+            daughter2_index = list(self.labels.keys())[list(self.labels.values()).index(daughter2)]
+        except ValueError:
+            raise ValueError("Daughter labels not found in graph labels.")
 
         self.edge_dict[daughter1_index] = [daughter2_index] + parent_neighbors
         self.edge_dict[daughter2_index] = [daughter1_index] + parent_neighbors
@@ -106,7 +124,7 @@ class Graph:
                 if node not in [daughter1_index, daughter2_index]:
                     connections.extend([daughter1_index, daughter2_index])
 
-    def to_data(self):
+    def to_data(self) -> Data:
         """
         Convert the graph to a PyTorch Geometric Data object with edge weights.
 
@@ -133,9 +151,9 @@ class Graph:
             edge_attr=edge_weights,
         )
 
-    def get_node_position_from_embeddings(self, node_index):
+    def get_node_position_from_embeddings(self, node_index: int) -> torch.Tensor:
         """
-        Helper method to extract the position of a node from its embeddings.
+        Extract the 3D position of a node from its embeddings.
 
         Args:
             node_index (int): Index of the node.
@@ -145,7 +163,7 @@ class Graph:
         """
         return self.nodes[node_index][:3]
 
-    def euclidean_distance_3d(self, pos1, pos2):
+    def euclidean_distance_3d(self, pos1: torch.Tensor, pos2: torch.Tensor) -> torch.Tensor:
         """
         Calculate Euclidean distance between two nodes in 3D space.
 
@@ -158,16 +176,16 @@ class Graph:
         """
         return torch.sqrt(torch.sum((pos1 - pos2) ** 2))
 
-    def plot(self, fig=None, node_colors=None):
+    def plot(self, fig: Optional[plt.Figure] = None, node_colors: Optional[Union[List, str]] = None) -> np.ndarray:
         """
         Plot the graph in 3D using NetworkX and Matplotlib.
 
         Args:
-            fig (matplotlib.figure.Figure, optional): Figure object to plot the graph. Defaults to None.
-            node_colors (list or str, optional): Colors for nodes. Defaults to None.
+            fig (Optional[plt.Figure]): Figure object to plot on. If None, a new figure is created.
+            node_colors (Optional[Union[List, str]]): Colors for nodes.
 
         Returns:
-            np.ndarray: Image of the graph plot.
+            np.ndarray: Image array of the plot.
         """
         data = self.to_data()
         G = torch_geometric.utils.to_networkx(data, to_undirected=True)
@@ -204,6 +222,7 @@ class Graph:
         ax.set_xlabel('X axis')
         ax.set_ylabel('Y axis')
         ax.set_zlabel('Z axis')
+        ax.set_title('3D Graph Visualization')  # enhanced title
 
         canvas.draw()
 
@@ -212,7 +231,7 @@ class Graph:
 
         return image
 
-    def copy(self):
+    def copy(self) -> 'Graph':
         """
         Create a deep copy of the graph.
 
