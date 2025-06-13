@@ -32,4 +32,11 @@
 * developed a Hypergraph model of the embryo.
 
 ### Pakhi Banchalia
-* developed applications of k-mapper for Topological Data Analysis and Neural Developmental Programs.   
+* developed applications of k-mapper for Topological Data Analysis and Neural Developmental Programs.
+
+### Lalith Baru
+* continued work on a Hypergraph model of the embryp.
+
+### Jayadratha Gayen
+* developed a temporal graph neural network (T-GNN) approach.
+
