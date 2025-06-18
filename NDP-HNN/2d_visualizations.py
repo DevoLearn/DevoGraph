@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""HNNs C Elegans Embryogensis
+"""HNNs C Elegans Embryogenesis
 
 Contributer: Lalith Bharadwaj Baru
 """
