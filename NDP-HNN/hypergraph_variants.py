@@ -30,7 +30,7 @@ class HypergraphConv(nn.Module):
         self.theta = nn.Linear(in_ch, out_ch, bias=bias)
 
     def forward(self, x, H):
-        # x: [N, F], H: [N, E]
+        #--- x: [N, F], H: [N, E]
         D_e = H.sum(0)                        # [E]
         D_v = H.sum(1)                        # [N]
         De_inv = torch.diag(1. / (D_e + 1e-6))
@@ -50,7 +50,7 @@ class PlainHNN(nn.Module):
         self.conv2 = HypergraphConv(hidden_ch, out_ch)
 
     def forward(self, x, H_lineage, H_spatial):
-        # combine all hyperedges
+        #--- combine all hyperedges
         H = torch.cat([H_lineage, H_spatial], dim=1)  # [N, E1+E2]
         h = F.relu(self.conv1(x, H))
         h = self.conv2(h, H)
@@ -72,19 +72,21 @@ class HypergraphAttention(nn.Module):
         self.V = nn.Linear(out_ch, out_ch, bias=True)
 
     def forward(self, x, H):
-        # x: [N,F], H: [N,E]
+        #--- x: [N,F], H: [N,E]
         N, _ = x.shape
         E = H.shape[1]
         z = self.W(x)                                # [N, out_ch]
-        # hyperedge embeddings y_e
-        # sum z over nodes in e, then / |e|
+        #--- hyperedge embeddings y_e
+        #--- sum z over nodes in e, then / |e|
+
         e_sizes = H.sum(0).clamp(min=1).unsqueeze(1) # [E,1]
         y = (H.t() @ z) / e_sizes                    # [E, out_ch]
-        # attention \alpha_{i,e} = softmax_e( z_i · y_e )
-        # compute all compatibility: [N, E]
+
+        #--- attention \alpha_{i,e} = softmax_e( z_i · y_e )
+        #--- compute all compatibility: [N, E]
         compat = z @ y.t()                           # [N, E]
         alpha = torch.softmax(compat.masked_fill(H==0, -1e9), dim=1)
-        # message: sum_e \alpha_{i,e} * y_e
+        #--- message: sum_e \alpha_{i,e} * y_e
         m = alpha @ y                                # [N, out_ch]
         return F.relu(self.V(m))
 
