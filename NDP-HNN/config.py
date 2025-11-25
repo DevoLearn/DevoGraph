@@ -1,8 +1,9 @@
 """HNNs C Elegans Embryogenesis
 
-Contributer: Lalith Bharadwaj Baru
+Contributor: Lalith Bharadwaj Baru
 """
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from pathlib import Path
 
 @dataclass
 class Config:
@@ -18,8 +19,8 @@ class Config:
     hid_dim: int = 64
     out_dim: int = 64
     num_edge_types: int = 2    # 0=spatial, 1=lineage
-    conv_type: str = "hgcn"    # ["hgcn","gat"]
-    rnn_type: str = "gru"      # ["gru","lstm"]
+    conv_type: str = "hgcn"    # ["hgcn","hsage","ugnn"]
+    rnn_type: str = "gru"      # ["gru","lstm","rnn"]
     use_transformer: bool = False
 
     #--- training
@@ -29,4 +30,11 @@ class Config:
 
     #--- io
     save_dir: str = "outputs"
-    embeddings_path: str = "outputs/embeddings.npy"
+    embeddings_path: str = field(init=False)
+
+    def __post_init__(self):
+        """Automatically generate embedding filename based on conv and rnn type."""
+        Path(self.save_dir).mkdir(parents=True, exist_ok=True)
+        self.embeddings_path = str(
+            Path(self.save_dir) / f"embeddings_{self.conv_type}_{self.rnn_type}.npy"
+        )

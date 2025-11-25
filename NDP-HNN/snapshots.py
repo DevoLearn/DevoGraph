@@ -17,11 +17,13 @@ def build_snapshots(dataset: Dict[str, Any],
     df = dataset['df']; cells = dataset['cells']
     idx = dataset['idx']; T_max = dataset['T_max']
     birth_feat = dataset['birth_feat']; G_lin = dataset['G_lin']
+    birth_times = dataset['birth_times']
 
     snapshots = []
     for t in range(int(T_max) + 1):
         alive_idx, H, he2type = make_hyperedges_alive(
-            t, cells, df, idx, G_lin, birth_feat, k=k, spatial_r=spatial_radius
+            t, cells, df, idx, G_lin, birth_feat, birth_times,
+            k=k, spatial_r=spatial_radius
         )
         #--- incidence -> bipartite edge_index
         rows, cols = [], []

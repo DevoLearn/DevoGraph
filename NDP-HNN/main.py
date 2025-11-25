@@ -21,11 +21,11 @@ def parse_args():
     p.add_argument("--radius", type=float, default=Config.spatial_radius)
     p.add_argument("--hid", type=int, default=Config.hid_dim)
     p.add_argument("--out", type=int, default=Config.out_dim)
-    p.add_argument("--conv", type=str, default=Config.conv_type, choices=["hgcn","gat"])
-    p.add_argument("--rnn", type=str, default=Config.rnn_type, choices=["gru","lstm"])
+    p.add_argument("--conv", type=str, default=Config.conv_type, choices=["hgcn","hsage","ugnn"])
+    p.add_argument("--rnn", type=str, default=Config.rnn_type, choices=["gru","lstm","rnn"])
     p.add_argument("--tf", action="store_true", help="use a tiny transformer encoder")
     p.add_argument("--save_dir", type=str, default=Config.save_dir)
-    p.add_argument("--emb", type=str, default=Config.embeddings_path)
+    p.add_argument("--emb", type=str, default=None)
     p.add_argument("--seed", type=int, default=Config.seed)
     return p.parse_args()
 
@@ -56,7 +56,14 @@ def main():
 
     #--- 5. embeddings (T, N, D)
     embeds = extract_embeddings(model, snaps, device=device)
-    save_embeddings(embeds, args.emb)
+
+    # --- 6. decide where to save
+    cfg = Config(conv_type=args.conv, rnn_type=args.rnn, save_dir=args.save_dir)
+    out_path = args.emb if args.emb else cfg.embeddings_path
+
+    # --- 7. save
+    save_embeddings(embeds, out_path)
+    print(f"Embeddings saved to: {out_path}")
 
 if __name__ == "__main__":
     main()

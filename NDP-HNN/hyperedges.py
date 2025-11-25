@@ -13,6 +13,7 @@ def make_hyperedges_alive(t: int,
                           idx: dict,
                           G_lin,
                           birth_feat: np.ndarray,
+                          birth_times: Dict[str, int],
                           k: int = 5,
                           spatial_r: float = 25.0) -> Tuple[list, list, dict]:
     """
@@ -21,8 +22,16 @@ def make_hyperedges_alive(t: int,
     - Spatial hyperedges: KNN neighborhoods (size >= 2) among alive nodes.
     - Lineage hyperedges: siblings alive at t (kids of same parent) with size >= 2.
     """
+    # cells_set = set(cells)
+    # df_cells = set(df['cell'].astype(str))
+    # missing_in_df = [c for c in cells if c not in df_cells]
+    # print("Cells missing in df:", missing_in_df[:20], "…", len(missing_in_df))
+
     #--- alive nodes by birth time
-    alive = [c for c in cells if int(df.loc[df['cell'] == c, 'time'].values[0]) <= t]
+    alive = [
+        c for c in cells
+        if c in birth_times and birth_times[c] <= t
+    ]
     alive_idx = [idx[c] for c in alive]
 
     #--- spatial hyperedges
@@ -40,8 +49,10 @@ def make_hyperedges_alive(t: int,
     #--- lineage hyperedges
     lineage = []
     for p in alive:
-        kids = [child for child in G_lin.successors(p)
-                if int(df.loc[df['cell'] == child, 'time'].values[0]) <= t]
+        kids = [
+            child for child in G_lin.successors(p)
+            if child in birth_times and birth_times[child] <= t
+        ]
         if len(kids) > 1:
             lineage.append(tuple(sorted(idx[k] for k in kids)))
 
