@@ -1,4 +1,11 @@
-git+https://github.com/sushmanthreddy/devolearn.git
+devolearn>=0.3.0
 torch==1.7.0
 dgl
 jupyter
+pandas
+opencv-python
+scikit-image
+pyyaml
+kmapper
+scikit-learn
+openpyxl
