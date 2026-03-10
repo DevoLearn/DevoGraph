@@ -45,6 +45,7 @@ def make_synthetic_dataset():
     birth_times = {'A': 0, 'B': 0, 'C': 1, 'D': 1}
 
     G_lin = nx.DiGraph()
+    G_lin.add_nodes_from(['A', 'B', 'C', 'D'])  # all cells must be nodes, even leaf ones
     G_lin.add_edge('A', 'C')
     G_lin.add_edge('A', 'D')
 
