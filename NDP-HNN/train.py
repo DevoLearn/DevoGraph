@@ -41,7 +41,9 @@ def train_model(model,
 
             #--- combine your two losses
             loss_xyz = torch.nn.functional.mse_loss(pred_xyz[mask_next], target_xyz)
-            loss_rec = incidence_bce(data, device=device)
+            # Extract node embeddings (h) from state; for LSTM state is (h, c)
+            h = state[0] if isinstance(state, tuple) else state
+            loss_rec = incidence_bce(h, data, device=device)
             loss = loss_xyz + loss_rec
 
             opt.zero_grad()
