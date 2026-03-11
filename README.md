@@ -1,4 +1,8 @@
 # DevoGraph
+
+## Looking for GSoC 2026 Applicants! 
+See our project description on [Neurostars](https://neurostars.org/t/gsoc-2026-project-6-openworm-devoworm-devograph/35565) for more information.
+
 ## Introduction
 * DevoGraph is a [GSoC 2025 project](https://neurostars.org/t/gsoc-2025-project-idea-4-openworm-devoworm-devograph-350h/31949) under the administration of [INCF](https://www.incf.org/) and [DevoWorm](https://devoworm.weebly.com/). Our main goal is to provide examples and components that utlize (Temporal/Directed/...) Graph Neural Networks to model the developmental process of *[C. elegans](https://en.wikipedia.org/wiki/Caenorhabditis_elegans)*. 
 
