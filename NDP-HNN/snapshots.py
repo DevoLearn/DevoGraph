@@ -38,10 +38,13 @@ def build_snapshots(dataset: Dict[str, Any],
             Hmat = coo_matrix((np.ones(len(rows)), (rows, cols)),
                               shape=(len(cells), len(H)))
             edge_index, _ = from_scipy_sparse_matrix(Hmat)
-            #--- [0=spatial, 1=lineage]
+            #--- [0=spatial, 1=lineage] — one entry per membership (per edge_index column)
+            he_type_list = [
+                0 if he2type[tuple(sorted(H[e]))] == 'spatial' else 1
+                for e in range(len(H))
+            ]
             e_types = torch.tensor(
-                [0 if he2type[tuple(sorted(H[e]))] == 'spatial' else 1
-                 for e in range(len(H))],
+                [he_type_list[c] for c in cols],
                 dtype=torch.long
             )
 
