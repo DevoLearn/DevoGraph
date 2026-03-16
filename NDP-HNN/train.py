@@ -29,7 +29,7 @@ def train_model(model,
             data = data.to(device)
 
             #--- forward one snapshot
-            state, pred_xyz = model(data, state)
+            state, pred_xyz, inc_logits = model(data, state)
 
             #--- mask nodes that are alive at next time step (t+1)
             t = int(data.t[0].item())
@@ -41,7 +41,7 @@ def train_model(model,
 
             #--- combine your two losses
             loss_xyz = torch.nn.functional.mse_loss(pred_xyz[mask_next], target_xyz)
-            loss_rec = incidence_bce(data, device=device)
+            loss_rec = incidence_bce(inc_logits, data, device=device)
             loss = loss_xyz + loss_rec
 
             opt.zero_grad()
