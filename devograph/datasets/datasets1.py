@@ -405,8 +405,11 @@ class CellTrackDataset(InMemoryDataset):
                 link_edges += self.same_next_links(df_data, link_edges)
 
             # convert to torch tensor
-            edge_index = [torch.tensor([lst], dtype=torch.long) for lst in link_edges]
-            edge_index = torch.cat(edge_index, dim=0).t().contiguous()
+            if len(link_edges) == 0:
+                edge_index = torch.empty((2, 0), dtype=torch.long)
+            else:
+                edge_index = [torch.tensor([lst], dtype=torch.long) for lst in link_edges]
+                edge_index = torch.cat(edge_index, dim=0).t().contiguous()
 
             # create list in the len of the edge_index
             # which indicate the label of each edge - i.e. connected/Not
