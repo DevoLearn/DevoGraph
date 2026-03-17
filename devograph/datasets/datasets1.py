@@ -237,6 +237,8 @@ class CellTrackDataset(InMemoryDataset):
 
     def iterator_gt_creator(self, df_data):
         frames = np.unique(df_data.frame_num)
+        if frames.shape[0] < 2:
+            return torch.empty(0, dtype=torch.long)
         gt = []
         for ind in range(frames.shape[0] - 1):
             curr_frame = frames[ind]
