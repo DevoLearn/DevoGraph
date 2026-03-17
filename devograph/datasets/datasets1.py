@@ -301,6 +301,8 @@ class CellTrackDataset(InMemoryDataset):
         return array
 
     def edge_feat_embedding(self, x, edge_index):
+        if edge_index.shape[1] == 0:
+            return np.empty((0, x.shape[1]), dtype=np.float32)
         src, trg = edge_index
         sub_x = x[src] - x[trg]
         abs_sub = np.abs(sub_x)
