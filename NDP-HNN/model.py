@@ -7,6 +7,25 @@ import torch
 import torch.nn as nn
 from torch_geometric.nn import HypergraphConv
 
+def _hyperedge_logits(h: torch.Tensor, edge_index: torch.Tensor) -> torch.Tensor:
+    """
+    Compute (N, E) incidence logits via dot-product between node embeddings and
+    mean-pooled hyperedge embeddings.  Hyperedge embeddings are derived from h
+    so gradients flow back through the model.
+    """
+    if edge_index.numel() == 0:
+        return h.new_zeros((h.size(0), 0))
+    row = edge_index[0].to(torch.long)
+    col = edge_index[1].to(torch.long) - int(edge_index[1].min().item())
+    E, D = int(col.max().item()) + 1, h.size(-1)
+    he_emb = h.new_zeros((E, D))
+    cnt    = h.new_zeros((E, 1))
+    he_emb.scatter_add_(0, col.view(-1, 1).expand(-1, D), h[row])
+    cnt.scatter_add_(0, col.view(-1, 1), torch.ones(col.size(0), 1, device=h.device))
+    he_emb = he_emb / cnt.clamp_min(1.0)
+    return h @ he_emb.T  # (N, E)
+
+
 class HyperSAGEConv(nn.Module):
     """
     HyperSAGE: node -> hyperedge -> node aggregation.
@@ -148,8 +167,9 @@ class DynHNN(nn.Module):
             outs.append(conv(data.x, ei))
         h = torch.relu(self.lin_mix(torch.cat(outs, dim=1)))
         h_next = h if h_prev is None else self.gru(h, h_prev)
-        pred_xyz = self.readout(h_next)[:, :3]
-        return h_next, pred_xyz
+        pred_xyz   = self.readout(h_next)[:, :3]
+        inc_logits = _hyperedge_logits(h_next, data.edge_index)
+        return h_next, pred_xyz, inc_logits
 
 class DynGrowingHNN(nn.Module):
     """
@@ -233,5 +253,6 @@ class DynGrowingHNN(nn.Module):
             h_next     = self.rnn(h, state_prev) if state_prev is not None else self.rnn(h)
             state_next = h_next
 
-        out = self.readout(h_next)[:, :3]
-        return state_next, out
+        out        = self.readout(h_next)[:, :3]
+        inc_logits = _hyperedge_logits(h_next, data.edge_index)
+        return state_next, out, inc_logits

@@ -29,7 +29,7 @@ def train_model(model,
             data = data.to(device)
 
             #--- forward one snapshot
-            state, pred_xyz = model(data, state)
+            state, pred_xyz, inc_logits = model(data, state)
 
             #--- mask nodes that are alive at next time step (t+1)
             t = int(data.t[0].item())

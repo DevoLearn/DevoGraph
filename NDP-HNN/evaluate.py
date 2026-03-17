@@ -20,7 +20,7 @@ def extract_embeddings(model, snapshots: List, device: str = "cuda") -> np.ndarr
     with torch.no_grad():
         for data in snapshots:
             data = data.to(device)
-            state, _ = model(data, state)
+            state, _, _ = model(data, state)
 
             #--- take H from state
             if isinstance(state, tuple):  # LSTM (h, c)
