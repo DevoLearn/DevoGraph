@@ -12,7 +12,7 @@ def train_model(model,
                 dataset: Dict[str, Any],
                 epochs: int = 30,
                 lr: float = 1e-3,
-                device: str = "cuda"):
+                device: str = "cuda") -> tuple:
 
     birth_feat = dataset['birth_feat']
     birth_times = dataset['birth_times']
@@ -21,9 +21,13 @@ def train_model(model,
     model.to(device)
     opt = torch.optim.Adam(model.parameters(), lr=lr)
 
+    history: Dict[str, List[float]] = {"loss": [], "loss_xyz": [], "loss_rec": []}
+
     for epoch in range(1, epochs+1):
         state = None
         total_loss = 0.0
+        total_xyz  = 0.0
+        total_rec  = 0.0
 
         for data in snapshots:
             data = data.to(device)
@@ -55,8 +59,20 @@ def train_model(model,
                 state = (state[0].detach(), state[1].detach())
             else:
                 state = state.detach()
+
             total_loss += float(loss.item())
+            total_xyz  += float(loss_xyz.item())
+            total_rec  += float(loss_rec.item())
 
-        print(f"Epoch {epoch:03d} — avg loss: {total_loss/len(snapshots):.4f}")
+        n = len(snapshots)
+        avg_loss = total_loss / n
+        avg_xyz  = total_xyz  / n
+        avg_rec  = total_rec  / n
 
-    return model
+        history["loss"].append(avg_loss)
+        history["loss_xyz"].append(avg_xyz)
+        history["loss_rec"].append(avg_rec)
+
+        print(f"Epoch {epoch:03d} — loss: {avg_loss:.4f}  xyz: {avg_xyz:.4f}  rec: {avg_rec:.4f}")
+
+    return model, history

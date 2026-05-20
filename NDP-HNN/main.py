@@ -3,6 +3,7 @@
 Contributer: Lalith Bharadwaj Baru
 """
 import argparse
+import json
 import os
 from config import Config
 from utils import set_seed, get_device, ensure_dir
@@ -52,7 +53,12 @@ def main():
     ).to(device)
 
     #--- 4. train
-    model = train_model(model, snaps, dataset, epochs=args.epochs, lr=args.lr, device=device)
+    model, history = train_model(model, snaps, dataset, epochs=args.epochs, lr=args.lr, device=device)
+
+    history_path = os.path.join(args.save_dir, "loss_history.json")
+    with open(history_path, "w") as f:
+        json.dump(history, f, indent=2)
+    print(f"Loss history saved to: {history_path}")
 
     #--- 5. embeddings (T, N, D)
     embeds = extract_embeddings(model, snaps, device=device)
