@@ -1,5 +1,8 @@
 # DevoTG: Developmental Temporal Graph Networks
 
+## Preprint Alert!
+[DevoTG: Temporal Graph Neural Networks for Modeling C. elegans Developmental Connectomics](https://arxiv.org/abs/2606.21940). _arXiv_, 2606.21940.
+
 ## 🧬 Project Overview
 
 DevoTG is a comprehensive framework for analyzing C. elegans cell division patterns and connectome development using temporal graph neural networks. This repository combines advanced visualization techniques with state-of-the-art graph neural networks to understand developmental biology through the lens of graph theory and network science.
