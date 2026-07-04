@@ -1,7 +1,6 @@
-from __future__ import annotations
-
 import numpy as np
 import pandas as pd
+import threading
 from scipy.spatial.distance import pdist, squareform
 
 
@@ -17,7 +16,7 @@ def initialize_biological_graph(
 
     Combines:
       1. Spatial proximity edges (undirected) from 3D Euclidean distance.
-      2. Lineage edges (directed parent -> daughter) from C. elegans naming.
+      2. Lineage edges (directed parent to daughter) from C. elegans naming.
 
     Args:
         df_active: Rows for cells alive at time t (must include cell, x, y, z).
@@ -88,12 +87,19 @@ def node_importance_scores(A_t: np.ndarray) -> np.ndarray:
     return A_t.sum(axis=0) + A_t.sum(axis=1)
 
 
+_THREAD_LOCAL = threading.local()
+
+def _get_buffer(K: int, N: int) -> np.ndarray:
+    layers = K + 1
+    if not hasattr(_THREAD_LOCAL, "buffer") or _THREAD_LOCAL.buffer.shape[1] < N or _THREAD_LOCAL.buffer.shape[0] < layers:
+        buf_layers = max(layers, 16)
+        buf_size = max(N, 2500)
+        _THREAD_LOCAL.buffer = np.zeros((buf_layers, buf_size, buf_size), dtype=np.float32)
+    return _THREAD_LOCAL.buffer
+
 def generate_nested_subgraphs(A_t: np.ndarray, K: int) -> np.ndarray:
     """
     Decompose A^t into K nested subgraphs following ESTGEL EAM decomposition.
-
-    Produces G^t_0 ⊇ G^t_1 ⊇ ... ⊇ G^t_K by iteratively removing the S lowest-
-    importance nodes and all edges incident to them, where S = floor(N / K).
 
     Args:
         A_t: Initial adjacency matrix, shape (N, N).
@@ -113,7 +119,9 @@ def generate_nested_subgraphs(A_t: np.ndarray, K: int) -> np.ndarray:
     if S < 1:
         raise ValueError(f"S = N // K must be >= 1; got N={N}, K={K}, S={S}.")
 
-    subgraphs = np.zeros((K + 1, N, N), dtype=np.float32)
+    buf = _get_buffer(K, N)
+    subgraphs = buf[:K + 1, :N, :N]
+    subgraphs[:] = 0.0
     subgraphs[0] = A_t.astype(np.float32, copy=False)
 
     current_A = A_t.astype(np.float32, copy=True)
@@ -125,15 +133,11 @@ def generate_nested_subgraphs(A_t: np.ndarray, K: int) -> np.ndarray:
         lowest_nodes = np.argsort(masked_scores)[:S]
         active_nodes[lowest_nodes] = False
 
-        next_A = current_A.copy()
-        removed = np.where(~active_nodes)[0]
-        next_A[removed, :] = 0.0
-        next_A[:, removed] = 0.0
+        current_A[lowest_nodes, :] = 0.0
+        current_A[:, lowest_nodes] = 0.0
+        subgraphs[k] = current_A
 
-        subgraphs[k] = next_A
-        current_A = next_A
-
-    return np.transpose(subgraphs, (1, 2, 0))
+    return np.transpose(subgraphs, (1, 2, 0)).copy()
 
 
 def build_nested_subgraph_tensor(
@@ -145,7 +149,7 @@ def build_nested_subgraph_tensor(
     K: int,
 ) -> np.ndarray:
     """
-    End-to-end helper: sparse edges at time t -> nested subgraph tensor (N, N, K+1).
+    End-to-end helper: sparse edges at time t to nested subgraph tensor (N, N, K+1).
     """
     A_t = adjacency_from_sparse(edge_src, edge_dst, edge_t, t_idx, N)
     return generate_nested_subgraphs(A_t, K)
