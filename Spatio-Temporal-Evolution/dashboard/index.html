@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTGEL 3D Embryo Development & Attention Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Three.js and OrbitControls via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Controls -->
+        <aside class="sidebar-panel">
+            <header class="app-header">
+                <div class="logo-badge">ESTGEL</div>
+                <h1>Embryo Development Dashboard</h1>
+                <p class="subtitle">Spatio-Temporal GNN & Explainability Explorer</p>
+            </header>
+            
+            <section class="control-section">
+                <h2>Phenotype Selection</h2>
+                <div class="toggle-group">
+                    <button id="btn-wt" class="toggle-btn active">Control (WT)</button>
+                    <button id="btn-rnai" class="toggle-btn">Perturbed (RNAi)</button>
+                </div>
+            </section>
+            
+            <section class="control-section">
+                <h2>Timeline Control</h2>
+                <div class="slider-container">
+                    <input type="range" id="time-slider" min="30" max="180" step="30" value="30">
+                    <div class="slider-labels">
+                        <span>t=30</span>
+                        <span>t=60</span>
+                        <span>t=90</span>
+                        <span>t=120</span>
+                        <span>t=150</span>
+                        <span>t=180</span>
+                    </div>
+                </div>
+                <div class="time-display">Active frame: <span id="current-time-val">30</span></div>
+            </section>
+            
+            <section class="control-section stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Active Nodes</span>
+                    <span id="stat-nodes" class="stat-val">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Active Edges</span>
+                    <span id="stat-edges" class="stat-val">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Avg EAM Weight</span>
+                    <span id="stat-avg-att" class="stat-val">0.000</span>
+                </div>
+            </section>
+            
+            <section class="control-section">
+                <h2>Top-5 Cell-Cell Interactions</h2>
+                <ul id="interaction-list" class="interaction-list">
+                    <!-- Dynamic Items -->
+                </ul>
+            </section>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- 3D Viewport -->
+            <div class="viewport-container">
+                <div class="viewport-header">
+                    <h3>3D Spatial Embryo & Attention Mapping</h3>
+                    <div class="viewport-hint">Drag to Rotate | Scroll to Zoom | Right-click to Pan</div>
+                </div>
+                <div id="three-canvas-container"></div>
+            </div>
+            
+            <!-- Bottom Panel: Curves and Graphs -->
+            <div class="analytics-row">
+                <div class="chart-card">
+                    <h3>Embryo Growth Profile</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>EAM Attention Contrast (WT vs. RNAi)</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="attentionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

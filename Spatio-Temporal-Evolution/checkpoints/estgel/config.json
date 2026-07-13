@@ -1,0 +1,19 @@
+{
+  "processed_dir": "D:\\Github\\DevoGraph\\Spatio-Temporal-Evolution\\Dataset\\processed\\by_embryo",
+  "labels_csv": null,
+  "epochs": 5,
+  "lr": 0.0001,
+  "weight_decay": 0.01,
+  "val_ratio": 0.2,
+  "seed": 42,
+  "max_samples": null,
+  "max_timesteps": 6,
+  "time_stride": 25,
+  "window_size": 20,
+  "bptt_truncation": 8,
+  "K": 11,
+  "max_nodes": 2500,
+  "dropout": 0.5,
+  "checkpoint_dir": "D:\\Github\\DevoGraph\\Spatio-Temporal-Evolution\\checkpoints\\estgel",
+  "device": "auto"
+}
