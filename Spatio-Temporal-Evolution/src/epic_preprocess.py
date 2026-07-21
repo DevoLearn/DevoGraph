@@ -12,6 +12,29 @@ from scipy.spatial.distance import pdist, squareform
 DEFAULT_FEATURES: tuple[str, ...] = ("x", "y", "z", "size", "blot")
 
 
+# C. elegans founder-cell divisions whose daughter names are NOT a simple
+# suffix of the parent (so `cell[:-1]` fails to recover the parent).
+# Maps daughter -> parent. Covers the early AB/P1/EMS/P2/P3/P4 lineage.
+FOUNDER_PARENT: dict[str, str] = {
+    "AB": "P0", "P1": "P0",
+    "EMS": "P1", "P2": "P1",
+    "MS": "EMS", "E": "EMS",
+    "C": "P2", "P3": "P2",
+    "D": "P3", "P4": "P3",
+    "Z2": "P4", "Z3": "P4",
+}
+
+
+def lineage_parent(cell: str) -> str | None:
+    """Return the parent cell name, using the founder map first, then the
+    suffix rule for sublineage names (e.g. ABal -> ABa)."""
+    if cell in FOUNDER_PARENT:
+        return FOUNDER_PARENT[cell]
+    if cell and cell[-1].isalpha():
+        return cell[:-1]
+    return None
+
+
 @dataclass(frozen=True)
 class EpicIndex:
     cell_to_idx: dict[str, int]
@@ -137,10 +160,9 @@ def preprocess_epic_file_sparse(
         for cell in alive_cells:
             if not cell:
                 continue
-            last = cell[-1]
-            if not last.isalpha():
+            parent = lineage_parent(cell)
+            if parent is None:
                 continue
-            parent = cell[:-1]
             if parent in index.cell_to_idx and cell in index.cell_to_idx:
                 p_idx = index.cell_to_idx[parent]
                 c_idx = index.cell_to_idx[cell]
