@@ -7,9 +7,9 @@ See our project description on [Neurostars](https://neurostars.org/t/gsoc-2026-p
 * DevoGraph is a [GSoC 2025 project](https://neurostars.org/t/gsoc-2025-project-idea-4-openworm-devoworm-devograph-350h/31949) under the administration of [INCF](https://www.incf.org/) and [DevoWorm](https://devoworm.weebly.com/). Our main goal is to provide examples and components that utlize (Temporal/Directed/...) Graph Neural Networks to model the developmental process of *[C. elegans](https://en.wikipedia.org/wiki/Caenorhabditis_elegans)*. 
 
 ## Developers
-* GSoC contributors: [Jiahang Li](https://github.com/LspongebobJH/DevoGraph), [Wataru Kawakami](https://github.com/watarungurunnn/GSoC2022_submission/tree/main), [Himansuhu Chougule](https://github.com/himanshu-02/DevoGraph), [Pakhi Banchalia](https://www.github.com/Pakhi07), [Mehul Arora](https://github.com/mehular0ra), [Ashu Rajput](https://github.com/Ashu-Rajput08), [Sushmanth Reddy](https://github.com/sushmanthreddy/), [Jayadratha Gayen](jayadratha.gayen@research.iiit.ac.in), [Lalith Bharadwaj Baru](lalithbharadwajbaru@gmail.com), [Barshan Mondal](https://github.com/blueee04). 
+* GSoC contributors: [Jiahang Li](https://github.com/LspongebobJH/DevoGraph), [Wataru Kawakami](https://github.com/watarungurunnn/GSoC2022_submission/tree/main), [Himansuhu Chougule](https://github.com/himanshu-02/DevoGraph), [Pakhi Banchalia](https://www.github.com/Pakhi07), [Mehul Arora](https://github.com/mehular0ra), [Sushmanth Reddy](https://github.com/sushmanthreddy/), [Jayadratha Gayen](jayadratha.gayen@research.iiit.ac.in), [Lalith Bharadwaj Baru](lalithbharadwajbaru@gmail.com), [Barshan Mondal](https://github.com/blueee04). 
 * Mentors: [Bradly Alicea](https://bradly-alicea.weebly.com/), [Jesse Parent](https://jesparent.github.io/), [Himansuhu Chougule](https://github.com/himanshu-02/DevoGraph), [Mehul Arora](https://github.com/mehular0ra)
-* Additional contributors: [Longhui Jiang](https://github.com/jianglonghui/DevoGraph), [Gautham Krishnan](https://github.com/gauthamk02)
+* Additional contributors: [Longhui Jiang](https://github.com/jianglonghui/DevoGraph), [Gautham Krishnan](https://github.com/gauthamk02), [Ashu Rajput](https://github.com/Ashu-Rajput08)
 
 ## Contributions
 ### Jiahang Li
