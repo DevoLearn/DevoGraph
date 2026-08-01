@@ -1,0 +1,12 @@
+{
+  "neuron": 0.615,
+  "muscle": 0.716,
+  "hypodermis": 0.721,
+  "pharynx": 0.8,
+  "intestine": 0.6,
+  "glia": 0.039,
+  "germline": 0.013,
+  "excretory": 0.0,
+  "coelomocyte": 0.0,
+  "other": 0.0
+}
