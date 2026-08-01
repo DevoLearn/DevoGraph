@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Training logs (noisy, regenerable)
+checkpoints/**/*.log
+
+# Redundant checkpoint copies — keep best.pt only
+checkpoints/**/last.pt
+checkpoints/**/best_ep15.pt
+
+# Large regenerable explainability dump (rebuild with scripts/extract_fate_explainability.py)
+checkpoints/**/fate_explainability.json
+
+# Duplicate PDFs at repo root — canonical copies live in References/
+/2402.10793v3.pdf
+/GSOC_Proposal.pdf
