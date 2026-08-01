@@ -5,9 +5,9 @@ __pycache__/
 # Training logs (noisy, regenerable)
 checkpoints/**/*.log
 
-# Redundant checkpoint copies — keep best.pt only
-checkpoints/**/last.pt
-checkpoints/**/best_ep15.pt
+# NOTE: model weights (*.pt) are ignored repo-wide by the parent DevoGraph
+# .gitignore, so checkpoints are not versioned. Retrain with scripts/train_fate.py
+# (config.json + history.json are committed so the run is reproducible).
 
 # Large regenerable explainability dump (rebuild with scripts/extract_fate_explainability.py)
 checkpoints/**/fate_explainability.json
