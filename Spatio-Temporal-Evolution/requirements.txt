@@ -3,3 +3,5 @@ pandas
 scipy
 tqdm
 matplotlib
+torch
+torch_geometric

@@ -4,6 +4,28 @@ import threading
 from scipy.spatial.distance import pdist, squareform
 
 
+# Early C. elegans founder divisions whose daughter names are not a suffix of
+# the parent name. Keeps this module's lineage edges consistent with
+# epic_preprocess.lineage_parent. Maps daughter -> parent.
+FOUNDER_PARENT: dict[str, str] = {
+    "AB": "P0", "P1": "P0",
+    "EMS": "P1", "P2": "P1",
+    "MS": "EMS", "E": "EMS",
+    "C": "P2", "P3": "P2",
+    "D": "P3", "P4": "P3",
+    "Z2": "P4", "Z3": "P4",
+}
+
+
+def lineage_parent(cell: str) -> str | None:
+    """Parent cell name via the founder map first, then the suffix rule."""
+    if cell in FOUNDER_PARENT:
+        return FOUNDER_PARENT[cell]
+    if cell and cell[-1].isalpha():
+        return cell[:-1]
+    return None
+
+
 def initialize_biological_graph(
     df_active: pd.DataFrame,
     cell_to_idx: dict[str, int],
@@ -48,10 +70,9 @@ def initialize_biological_graph(
     for cell in active_cells:
         if not cell:
             continue
-        last = cell[-1]
-        if not last.isalpha():
+        parent = lineage_parent(cell)
+        if parent is None:
             continue
-        parent = cell[:-1]
         if parent in cell_to_idx and cell in cell_to_idx:
             p_idx = cell_to_idx[parent]
             c_idx = cell_to_idx[cell]

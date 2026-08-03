@@ -1,0 +1,23 @@
+{
+  "processed_dir": "D:\\Github\\DevoGraph\\Spatio-Temporal-Evolution\\Dataset\\processed\\by_embryo",
+  "fate_csv": "D:\\Github\\DevoGraph\\Spatio-Temporal-Evolution\\Dataset\\fate\\cell_fate.csv",
+  "epochs": 20,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "val_ratio": 0.2,
+  "seed": 42,
+  "max_samples": null,
+  "recurrence_stride": 10,
+  "max_steps": 20,
+  "bptt_truncation": 3,
+  "K": 11,
+  "max_nodes": 1024,
+  "max_cells": 1000,
+  "drl_channels": 6,
+  "dropout": 0.5,
+  "no_class_weight": true,
+  "resume": true,
+  "cosine": true,
+  "checkpoint_dir": "D:\\Github\\DevoGraph\\Spatio-Temporal-Evolution\\checkpoints\\estgel_fate",
+  "device": "auto"
+}
