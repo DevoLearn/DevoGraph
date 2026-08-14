@@ -1,0 +1,10 @@
+gradio==5.9.1
+matplotlib==3.9.2
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+fastapi==0.115.6
+python-multipart==0.0.20
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1
+torch_geometric==2.6.1

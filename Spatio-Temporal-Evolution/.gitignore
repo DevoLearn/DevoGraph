@@ -15,3 +15,12 @@ checkpoints/**/fate_explainability.json
 # Duplicate PDFs at repo root — canonical copies live in References/
 /2402.10793v3.pdf
 /GSOC_Proposal.pdf
+
+# Deployment bundles are assembled by scripts/build_api_bundle.py from
+# src/, checkpoints/ and Dataset/, so the generated copies are not versioned.
+api/src/
+api/model/
+space/src/
+space/model/
+space/service.py
+space/examples/
