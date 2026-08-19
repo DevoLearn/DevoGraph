@@ -89,6 +89,26 @@
   .lg .ct{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
   .lg .bar{height:3px;border-radius:2px;background:currentColor;margin-top:3px;opacity:.5}
 
+  /* upload */
+  .upload{padding:16px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;
+    border-bottom:1px solid var(--line-soft)}
+  .upload.over{background:#7cc4ff0e}
+  .up-btn{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink);
+    background:var(--panel-2);border:1px solid var(--accent-dim);border-radius:var(--r-sm);
+    padding:9px 15px;cursor:pointer;transition:.14s;width:100%}
+  .up-btn:hover:not(:disabled){background:#7cc4ff1a;border-color:var(--accent)}
+  .up-btn:disabled{opacity:.55;cursor:progress}
+  .up-hint{margin:0;font-size:11.5px;color:var(--faint);line-height:1.5}
+  .up-hint code{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+  .up-status{font-family:var(--mono);font-size:11.5px;min-height:1em}
+  .up-status.err{color:var(--bad)} .up-status.ok{color:var(--good)} .up-status.busy{color:var(--accent)}
+  .results{padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+  .res-hd{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .res-row{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;
+    padding:5px 0;border-bottom:1px solid var(--line-soft)}
+  .res-row .v{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .res-note{font-size:11.5px;color:var(--faint);line-height:1.5;margin:2px 0 0}
+
   .inspect{padding:14px 16px;min-height:150px}
   .insp-empty{color:var(--faint);font-size:12.5px;font-family:var(--mono);padding:14px 0;text-align:center}
   .insp-name{font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:.02em}
@@ -177,6 +197,16 @@
 
     <aside class="rail">
       <div class="card">
+        <h2>Analyse your own embryo <span class="note">EPIC csv</span></h2>
+        <div class="upload" id="drop">
+          <input type="file" id="fileInput" accept=".csv" hidden>
+          <button class="up-btn" id="uploadBtn">Choose a CSV</button>
+          <p class="up-hint">or drop it here. Needs columns<br><code>cell, time, x, y, z, size, blot</code></p>
+          <div class="up-status" id="upStatus"></div>
+        </div>
+        <div class="results" id="results" hidden></div>
+      </div>
+      <div class="card">
         <h2>Tissue fates <span class="note">click to isolate</span></h2>
         <div class="legend" id="legend"></div>
       </div>
@@ -251,47 +281,90 @@
 <script id="fate-data" type="application/json">__FATE_DATA__</script>
 <script>
 (function(){
-  const DATA = JSON.parse(document.getElementById('fate-data').textContent);
+  /* Point this at your deployed Space to enable CSV upload. */
+  const API_BASE = window.ESTGEL_API || "";
+
+  let DATA = JSON.parse(document.getElementById('fate-data').textContent);
   const css = getComputedStyle(document.documentElement);
   const colorCache={};
   const colorOf = f => colorCache[f] || (colorCache[f]=(css.getPropertyValue('--f-'+f).trim()||'#7a8699'));
 
-  /* ---------- header chips ---------- */
-  const hist=(DATA.metrics.history||[]), last=hist[hist.length-1]||{};
-  const chips=[['cells',DATA.n_cells],['val acc',last.val_acc!=null?(last.val_acc*100).toFixed(0)+'%':'—'],
-    ['macro-F1',last.val_macro_f1!=null?last.val_macro_f1.toFixed(2):'—'],
-    ['tissues',new Set(DATA.cells.map(c=>c.fate)).size]];
-  document.getElementById('chips').innerHTML=chips.map(([k,v])=>`<div class="chip"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('');
-  document.getElementById('emb-name').textContent=DATA.embryo;
-  document.getElementById('footL').textContent='ESTGEL node classifier · '+DATA.embryo;
-
-  /* ---------- legend ---------- */
-  const counts={}; DATA.cells.forEach(c=>counts[c.fate]=(counts[c.fate]||0)+1);
-  const fates=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
-  const maxCt=Math.max(...Object.values(counts)), hidden=new Set();
-  const legend=document.getElementById('legend');
-  legend.innerHTML=fates.map(f=>`
-    <div class="lg" data-f="${f}" style="color:${colorOf(f)}">
-      <span class="dot" style="background:${colorOf(f)}"></span>
-      <span style="flex:1"><span style="display:flex;justify-content:space-between">
-        <span class="nm" style="color:var(--ink)">${f}</span><span class="ct">${counts[f]}</span></span>
-        <span class="bar" style="width:${Math.max(8,counts[f]/maxCt*100)}%;display:block"></span></span></div>`).join('');
-  legend.querySelectorAll('.lg').forEach(el=>el.onclick=()=>{
-    const f=el.dataset.f; hidden.has(f)?(hidden.delete(f),el.classList.remove('off')):(hidden.add(f),el.classList.add('off'));});
-
-  /* ---------- 3D engine ---------- */
   const cv=document.getElementById('view'), ctx=cv.getContext('2d');
-  const cells=DATA.cells, frames=DATA.frames, edges=DATA.edges||[], NF=frames.length;
+  const legend=document.getElementById('legend');
+
+  /* mutable view state, reset whenever new data is loaded */
+  let cells=[], frames=[], edges=[], NF=0;
+  let cx=0, cy=0, cz=0, spread=1;
+  let hidden=new Set();
   let yaw=0.6, pitch=-0.35, zoom=1, dragging=false, autoRot=true, sel=-1, hover=-1;
   let lx=0,ly=0, dpr=Math.min(window.devicePixelRatio||1,2);
   let t=0, playing=false, speed=0.5;
   let showEdges=true, showMiss=true;
 
-  let cx=0,cy=0,cz=0,nc=0;
-  cells.forEach(c=>{const p=c.pos[NF-1]||c.pos.find(Boolean);if(p){cx+=p[0];cy+=p[1];cz+=p[2];nc++;}});
-  cx/=nc;cy/=nc;cz/=nc;
-  let sp=0,n2=0; cells.forEach(c=>c.pos.forEach(p=>{if(p){sp+=(p[0]-cx)**2+(p[1]-cy)**2+(p[2]-cz)**2;n2++;}}));
-  const spread=Math.sqrt(sp/n2)||1;
+  function applyData(d){
+    DATA=d;
+    cells=DATA.cells; frames=DATA.frames; edges=DATA.edges||[]; NF=frames.length;
+
+    // centroid + spread from the final frame so the embryo fills the stage
+    let nc=0; cx=cy=cz=0;
+    cells.forEach(c=>{const p=c.pos[NF-1]||c.pos.find(Boolean);if(p){cx+=p[0];cy+=p[1];cz+=p[2];nc++;}});
+    cx/=(nc||1); cy/=(nc||1); cz/=(nc||1);
+    let sp=0,n2=0;
+    cells.forEach(c=>c.pos.forEach(p=>{if(p){sp+=(p[0]-cx)**2+(p[1]-cy)**2+(p[2]-cz)**2;n2++;}}));
+    spread=Math.sqrt(sp/(n2||1))||1;
+
+    // chips: model-level metrics stay, cell/tissue counts follow the embryo
+    const hist=(DATA.metrics&&DATA.metrics.history)||[], last=hist[hist.length-1]||{};
+    const chips=[['cells',DATA.n_cells],['val acc',last.val_acc!=null?(last.val_acc*100).toFixed(0)+'%':'—'],
+      ['macro-F1',last.val_macro_f1!=null?last.val_macro_f1.toFixed(2):'—'],
+      ['tissues',new Set(cells.map(c=>c.fate)).size]];
+    document.getElementById('chips').innerHTML=chips.map(([k,v])=>`<div class="chip"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('');
+    document.getElementById('emb-name').textContent=DATA.embryo;
+    document.getElementById('footL').textContent='ESTGEL node classifier · '+DATA.embryo;
+
+    // legend
+    const counts={}; cells.forEach(c=>counts[c.fate]=(counts[c.fate]||0)+1);
+    const fates=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+    const maxCt=Math.max(...Object.values(counts),1);
+    hidden=new Set();
+    legend.innerHTML=fates.map(f=>`
+      <div class="lg" data-f="${f}" style="color:${colorOf(f)}">
+        <span class="dot" style="background:${colorOf(f)}"></span>
+        <span style="flex:1"><span style="display:flex;justify-content:space-between">
+          <span class="nm" style="color:var(--ink)">${f}</span><span class="ct">${counts[f]}</span></span>
+          <span class="bar" style="width:${Math.max(8,counts[f]/maxCt*100)}%;display:block"></span></span></div>`).join('');
+    legend.querySelectorAll('.lg').forEach(el=>el.onclick=()=>{
+      const f=el.dataset.f; hidden.has(f)?(hidden.delete(f),el.classList.remove('off')):(hidden.add(f),el.classList.add('off'));});
+
+    // transport
+    const slider=document.getElementById('slider');
+    slider.max=NF-1; slider.value=0; t=0; sel=-1; hover=-1;
+    document.getElementById('ticks').innerHTML=frames.map((tt,i)=>(i%6===0||i===NF-1)?`<span>${tt}</span>`:'<span></span>').join('');
+    inspect(-1);
+    renderResults(DATA.analysis);
+  }
+
+  /* per-embryo analysis card (only present for uploads) */
+  function renderResults(a){
+    const box=document.getElementById('results');
+    if(!a){ box.hidden=true; return; }
+    const acc = a.accuracy!=null
+      ? `<div class="res-row"><span>accuracy</span><span class="v">${(a.accuracy*100).toFixed(1)}%</span></div>
+         <div class="res-row"><span>scored cells</span><span class="v">${a.n_labelled}</span></div>`
+      : `<p class="res-note">Cell names are not standard C. elegans lineage names, so there is no
+         ground truth to score against. Predictions only.</p>`;
+    const abl = a.ablation
+      ? `<div class="res-row"><span>fates flipped without contacts</span><span class="v">${(a.ablation.flip_rate*100).toFixed(0)}%</span></div>`
+      : '';
+    box.hidden=false;
+    box.innerHTML=`<div class="res-hd">Your embryo</div>
+      <div class="res-row"><span>cells</span><span class="v">${a.n_cells}</span></div>
+      ${acc}
+      <div class="res-row"><span>mean confidence</span><span class="v">${(a.mean_confidence*100).toFixed(0)}%</span></div>
+      <div class="res-row"><span>low-confidence cells</span><span class="v">${a.low_confidence_cells}</span></div>
+      ${abl}
+      <div class="res-row" style="border:none"><span>inference</span><span class="v">${a.inference_seconds}s</span></div>`;
+  }
 
   function resize(){const r=cv.getBoundingClientRect();cv.width=r.width*dpr;cv.height=r.height*dpr;}
   window.addEventListener('resize',resize);
@@ -393,8 +466,6 @@
 
   /* transport */
   const slider=document.getElementById('slider');
-  slider.max=NF-1;
-  document.getElementById('ticks').innerHTML=frames.map((tt,i)=>(i%6===0||i===NF-1)?`<span>${tt}</span>`:'<span></span>').join('');
   slider.oninput=()=>{t=+slider.value;};
   const playBtn=document.getElementById('play');
   playBtn.onclick=()=>{playing=!playing;playBtn.textContent=playing?'❚❚':'▶';};
@@ -438,6 +509,7 @@
     present.forEach(a=>{html+=`<tr><td class="rl">${a}</td>`+present.map(b=>{const v=(cc[a]||{})[b]||0;return `<td class="c" style="background:${cscale(v)}">${v||''}</td>`;}).join('')+'</tr>';});
     document.getElementById('contactHeat').innerHTML=html+'</table>';
   }
+  const hist=(DATA.metrics&&DATA.metrics.history)||[];
   if(hist.length){
     const W=260,H=132,pad=6,n=hist.length, xs=i=>pad+(n>1?i/(n-1):0.5)*(W-2*pad), yA=v=>H-pad-v*(H-2*pad);
     const line=(key,col)=>{const d=hist.map((h,i)=>`${i?'L':'M'}${xs(i).toFixed(1)},${yA(h[key]).toFixed(1)}`).join(' ');
@@ -449,6 +521,51 @@
   document.getElementById('recallBars').innerHTML='<div style="font-size:11px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em">Per-class recall</div>'+
     rkeys.map(f=>`<div class="brow"><span class="bl">${f}</span><span class="track"><i style="width:${rec[f]*100}%;background:${colorOf(f)}"></i></span><span class="bv">${(rec[f]*100).toFixed(0)}%</span></div>`).join('');
 
+  /* ---------- CSV upload ---------- */
+  const fileInput=document.getElementById('fileInput'),
+        uploadBtn=document.getElementById('uploadBtn'),
+        drop=document.getElementById('drop'),
+        status=document.getElementById('upStatus');
+
+  function setStatus(msg, kind){ status.textContent=msg; status.className='up-status'+(kind?' '+kind:''); }
+
+  if(!API_BASE){
+    uploadBtn.disabled=true;
+    setStatus('Upload needs the prediction API. Set window.ESTGEL_API.', '');
+  }
+
+  async function sendCSV(file){
+    if(!API_BASE) return;
+    if(!file.name.toLowerCase().endsWith('.csv')){ setStatus('That is not a .csv file.','err'); return; }
+    uploadBtn.disabled=true;
+    setStatus('Analysing '+file.name+'. First run may take ~30s while the server wakes.','busy');
+    const fd=new FormData(); fd.append('file',file);
+    try{
+      const r=await fetch(API_BASE.replace(/\/$/,'')+'/predict',{method:'POST',body:fd});
+      const body=await r.json().catch(()=>null);
+      if(!r.ok){ setStatus((body&&body.detail)||('Server error '+r.status),'err'); return; }
+      playing=false; document.getElementById('play').textContent='▶';
+      applyData(body);
+      setStatus('Done: '+body.n_cells+' cells analysed.','ok');
+    }catch(err){
+      setStatus('Could not reach the prediction server.','err');
+    }finally{
+      uploadBtn.disabled=false;
+    }
+  }
+
+  uploadBtn.onclick=()=>fileInput.click();
+  fileInput.onchange=e=>{ if(e.target.files[0]) sendCSV(e.target.files[0]); fileInput.value=''; };
+  ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{
+    e.preventDefault(); if(API_BASE) drop.classList.add('over'); }));
+  ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{
+    e.preventDefault(); drop.classList.remove('over'); }));
+  drop.addEventListener('drop',e=>{
+    const f=e.dataTransfer.files && e.dataTransfer.files[0];
+    if(f) sendCSV(f);
+  });
+
+  applyData(DATA);
   resize(); draw(); requestAnimationFrame(loop);
 })();
 </script>
