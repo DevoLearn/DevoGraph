@@ -8,12 +8,12 @@ import numpy as np
 from dgl.data import DGLDataset
 from dgl.data.utils import download, save_info, save_graphs, load_graphs, load_info
 
-home_dir = os.environ['HOME']+'/'
+home_dir = os.path.expanduser('~')+'/'
 class CETemporalGraphKNN(DGLDataset):
     '''
     The C. elegans Temporal Graph built on given the csv file using KNN method.
     '''
-    home_dir = os.environ['HOME']+'/'
+    home_dir = os.path.expanduser('~')+'/'
     def __init__(self, name='CETemporalGraph', url=None, raw_dir=f'{home_dir}.CEData/', save_dir=f'{home_dir}.CEData/', 
                  hash_key=(), force_reload=False, verbose=False, transform=None, 
                  knn_k=4, knn_algorithm='bruteforce-blas', knn_dist='euclidean', 
