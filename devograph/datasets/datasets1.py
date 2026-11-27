@@ -19,7 +19,7 @@ class CellTrackDataset(InMemoryDataset):
                  edge_feat_embed_dict={'p':1, 'use_normalized_x':True, 'normalized_features':True},
                  normalize_all_cols=False,
                  dirs_path={'train':["01", "02"]},
-                 main_path="/home/ubuntu/DevoGraph/data/Fluo-N2DH-SIM+",
+                 main_path=osp.join(osp.dirname(osp.abspath(__file__)), '..', '..', 'data', 'Fluo-N2DH-SIM+'),
                  num_frames=10,
                  type_file='csv',
                  mul_vals=[2, 2, 2],

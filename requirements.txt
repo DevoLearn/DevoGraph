@@ -1,11 +1,21 @@
-devolearn>=0.3.0
-torch==1.7.0
+# devolearn (stage_1 only) pins torch==1.7.0; install it via stage_1/install_dependencies.sh
+# dgl 2.2.1 (latest Windows wheels) ships binaries for torch 2.1.0 - 2.3.0
+torch>=2.1,<2.3.1
 dgl
+torchdata==0.7.1  # dgl 2.2.1 needs torchdata.datapipes (removed in later versions)
+pydantic  # required by dgl.graphbolt but not declared by dgl
+torch_geometric
+hydra-core
+# torch 2.3 wheels are built against numpy 1.x
+numpy<2
 jupyter
-pandas
+pandas<2.3
+matplotlib
+networkx
 opencv-python
 scikit-image
 pyyaml
 kmapper
 scikit-learn
 openpyxl
+pytest
